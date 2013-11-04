@@ -21,19 +21,13 @@ Start Eclipse.
 Go to Workbench.
 Open Perspective ( ) on the top right bar.
 Select Git Repository Exploring.
-Right click under the Git Repositories frame.
-Start a new repository location.
+Clone a Git repository.
 Add https://github.com/KeywanHP/QTLNetMiner.git as the Url and click Finish
-Right click on "https://svn.code.sf.net/p/ondex/code/trunk"
-Checkout... -> Checkout as a project in the workspace -> Project Nane: ondex -> Finish
-Swith to the Java View ( )
-Right click over ondex [trunk] -> Import... -> Maven -> Existing Maven Projects
-In Advanced > Profiles type either 
+Enter Git User name and password
+Local Destination Directory: D:\Git\QTLNetMiner
+File -> Import -> Maven Project -> Excisting maven Project
 
 rothamsted-internal-nexus (at Rothamsted) 
 eclipse-folders(otherwise) 
 
-In Advanced > Name template select [groupId].[artifactId] - Next - Finish
-If Next is grey just unchek and check again one item from the Projects list
-Finish
-If any module is missing accept when Eclipse suggest to install it and wait until all jobs are done on the Progress tab before restarting Eclipse. 
+artifactId] - Next - Finish
