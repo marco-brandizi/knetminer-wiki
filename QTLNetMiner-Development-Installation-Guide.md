@@ -19,13 +19,15 @@ PATH_TO_JDK\bin\javaw.exe
 
 * Start Eclipse.
 * Go to Workbench.
-* Open Perspective (![Perspective Icon](http://wiki.ondex.org/index.php?title=Image:Perspective_icon.png)) on the top right bar.
+* Open Perspective on the top right bar.
 * Select Git Repository Exploring.
 * Clone a Git repository.
-* Add https://github.com/KeywanHP/QTLNetMiner.git as the Url and click Finish
-* Enter Git User name and password
-* Local Destination Directory: D:\Git\QTLNetMiner
-* File -> Import -> Maven Project -> Excisting maven Project
+* * Add https://github.com/KeywanHP/QTLNetMiner.git as the URI
+* * Enter Git User name and password
+* * Set your Local Destination Directory
+* * Finish
+
+* File -> Import -> Maven Project -> Existing maven Project
 
 rothamsted-internal-nexus (at Rothamsted) 
 eclipse-folders(otherwise) 
