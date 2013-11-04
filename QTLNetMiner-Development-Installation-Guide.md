@@ -28,8 +28,5 @@ PATH_TO_JDK\bin\javaw.exe
   * Finish
 
 * File -> Import -> Maven Project -> Existing maven Project
-
-rothamsted-internal-nexus (at Rothamsted) 
-eclipse-folders(otherwise) 
-
-artifactId] - Next - Finish
+* In Advanced, Name template select [artifactId]
+* Finish
