@@ -17,16 +17,16 @@ PATH_TO_JDK\bin\javaw.exe
 
 ## Checking out QTLNetMiner as Maven Project
 
-* Start Eclipse.
-* Go to Workbench.
-* Open Perspective on the top right bar.
-* Select Git Repository Exploring.
-* Clone a Git repository.
+1. Start Eclipse.
+1. Go to Workbench.
+1. Open Perspective on the top right bar.
+1. Select Git Repository Exploring.
+1. Clone a Git repository.
   * Add https://github.com/KeywanHP/QTLNetMiner.git as the URI
   * Enter Git User name and password
   * Set your Local Destination Directory
   * Finish
-
-* File -> Import -> Maven Project -> Existing maven Project
-* In Advanced, Name template select [artifactId]
-* Finish
+1. File -> Import -> Maven Project -> Existing maven Project
+1. Click "Browse" and select the folder QTLNetMiner within the git directory selected in the step number 4
+1. In Advanced, Name template select [artifactId]
+1. Finish
