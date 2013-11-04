@@ -10,7 +10,7 @@
 * Open D:\eclipse\eclipse.ini
 * Before the –vmargs line, add the following
 -vm 
-_PATH_TO_JDK_\bin\javaw.exe 
+PATH_TO_JDK\bin\javaw.exe 
 
 * Save and Start D:\eclipse\eclipse.exe
 * Set your workspace, e.g. D:\WorkspaceGit
