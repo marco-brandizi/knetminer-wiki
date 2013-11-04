@@ -22,10 +22,10 @@ PATH_TO_JDK\bin\javaw.exe
 * Open Perspective on the top right bar.
 * Select Git Repository Exploring.
 * Clone a Git repository.
-* * Add https://github.com/KeywanHP/QTLNetMiner.git as the URI
-* * Enter Git User name and password
-* * Set your Local Destination Directory
-* * Finish
+  * Add https://github.com/KeywanHP/QTLNetMiner.git as the URI
+  * Enter Git User name and password
+  * Set your Local Destination Directory
+  * Finish
 
 * File -> Import -> Maven Project -> Existing maven Project
 
