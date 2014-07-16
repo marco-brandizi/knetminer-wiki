@@ -41,7 +41,7 @@ PATH_TO_JDK\bin\javaw.exe
 		<artifactId>tomcat6-maven-plugin</artifactId>
 		<version>2.2</version>
 		<configuration>
-			<url>http://qtlnetminer-test.rothamsted.ac.uk:8080/manager</url>
+			<url>http://my_tomcat_server:8080/manager</url>
 			<server>myserver</server>
 			<path>/${project.build.finalName}</path>
 		</configuration>
