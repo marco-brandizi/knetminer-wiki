@@ -30,3 +30,43 @@ PATH_TO_JDK\bin\javaw.exe
 1. Click "Browse" and select the folder QTLNetMiner within the git directory selected in the step number 4
 1. In Advanced, Name template select [artifactId]
 1. Finish
+
+## How to use automatically deploy a war file to a remote Tomcat server
+* To the pom.xml file for each project you would like to deploy, a new plugin must be defined:
+```
+<plugins>
+	...
+	<plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat6-maven-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+			<url>http://qtlnetminer-test.rothamsted.ac.uk:8080/manager</url>
+			<server>myserver</server>
+			<path>/${project.build.finalName}</path>
+		</configuration>
+	</plugin>
+	...
+</plugins>
+```
+Where `<url>` contains the address to the tomcat management page of the server you wish to deploy to.
+And `<path>` is the path on the tomcat server to which the war file is deployed.
+
+* Next each tomcat server with a different username and password  needs an entry in the maven settings.xml file.
+```
+<settings>
+	...
+	<servers>
+		<server>
+			<id>myserver</id>
+			<username>user...</username>
+			<password>pass...</password>
+		</server>
+	</servers>
+	...
+</settings>
+```
+Make sure the value for `<id>` matches the value inside the `<server>` tags in the previous section.
+Fill in the username and password fields with those used to login to the tomcat management pages.
+
+* Finally to deploy from eclipse, create a new run configuration with the base directory set to the project you wish to deploy, and for the goals use `tomcat6:redeploy`. This should now compile the project if it needs to and then deploy the generated war file to the specified server.
