@@ -1,6 +1,3 @@
-How to set up QTLNetMiner on a Linux-based server
-======================================
-
 Installation of the QTLNetMiner web server
 ================================
 
