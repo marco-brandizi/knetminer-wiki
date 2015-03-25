@@ -1,9 +1,7 @@
 Installation of the QTLNetMiner web server
 ================================
 
-For each instance of QTLNetMiner, there are two different programs: A **server** and a **client**. The “client” handles the data visualization part, the web-page with JavaScript and pictures which will be deployed on a Tomcat server. The “server” handles the data management part which queries the Ondex knowledge network based on the parsed OXL file and uses a Java applet (**OndexWeb**) for generating the network graph.
- 
-When a user navigates to an instance of QTLNetMiner such as https://ondex.rothamsted.ac.uk/QTLNetMinerArabidopsis/ s(he) first sees the QTLNetMiner client. Once a search query is entered by the user, the QTLNetMiner “client” asks the “server”'s knowledge network about the query. The “server” creates an answer, sends that back to the “client”, and then it's the “client”'s task to visualise that data. To keep them both apart each QTLNetMiner project consists of two folders: “client” and “server”.
+For each instance of QTLNetMiner, there are two different programs: A **server** and a **client**. The **client**  is deployed on a Tomcat server and holds the application presentation/interface including the web-page with JavaScript and pictures. It broadcasts all of its application-specific requests to the **server** which contains the application logic and data processing. The application server is implemented as a Java Servlet listening to a specific port and producing request specific datasets for the client to visualize. First time the Servlet is started it parses the organisms-specific OXL file into memory and creates pre-build indices for fast searching. Since genome-scale networks can be very large and are stored in memory we recommend to have a minimum of 10GB RAM available in the server.
 
 Software to install:
 -----------------------
