@@ -1,7 +1,7 @@
 Installation of the QTLNetMiner web server
 ================================
 
-For each instance of QTLNetMiner, there are two different programs: A **server** and a **client**. The **client**  is deployed on a Tomcat server and holds the application presentation/interface including the web-page with JavaScript and pictures. It broadcasts all of its application-specific requests to the **server** which contains the application logic and data processing. The application server is implemented as a Java Servlet listening to a specific port and producing request specific datasets for the client to visualize. First time the Servlet is started it parses the organisms-specific OXL file into memory and creates pre-build indices for fast searching. Since genome-scale networks can be very large and are stored in memory we recommend to have a minimum of 10GB RAM available in the server.
+For each instance of QTLNetMiner, there are two different programs: A **server** and a **client**. The **client**  is deployed on a Tomcat server and holds the application presentation/interface including the web-page with JavaScript and pictures. It broadcasts all of its application-specific requests to the **server** which contains the application logic and data processing. The application server is implemented as a Java Servlet listening to a specific port and producing request specific datasets for the client to visualize. First time the Servlet is started it parses the organisms-specific OXL file into memory and creates pre-build indices for fast searching. Since genome-scale networks can be very large and are stored in memory we recommend to have a minimum of 10GB RAM available on the server.
 
 Software to install:
 -----------------------
