@@ -47,8 +47,6 @@ x-- xnets (this folder contains the final workflows which will pull all of the a
 
 For the rest of this document we'll go through each of these folders.
 
-## Homology
-
 ### Organisms
 
 We will start with the gene and protein network since that is the most basic one we will build the entire network on.
@@ -117,7 +115,7 @@ Now let's add some protein domains. You can get domains from [BioMart](http://pl
 We'll use the Ondex Console to load this data. Open Ondex using `bash ondex/runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is the code to create a graph out of the InterPro data:
 
 ```Javascript
-p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/organisms/Brassicaoleracea/Protein_Domain/Protein_InterPro/Protein_InterPro.txt", "\\t+",1));
+p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/organisms/BrassicaOleracea/Protein_Domain/Protein_InterPro/Protein_InterPro.txt", "\\t+",1));
 c1 = p.newConceptPrototype(defAccession(0,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
 c2 = p.newConceptPrototype(defAccession(1,"IPRO",false), defCC("ProtDomain"), defDataSource("ENSEMBL"), defName(2), defAttribute(3, "Description", "TEXT", true));
 
@@ -125,9 +123,25 @@ p.newRelationPrototype(c1, c2, defRT("has_domain"));
 s = p.parse();
 ```
 
-## Putting it together for the organism
+Click "File -> Save Graph as" in `organisms/BrassicaOleracea/Protein_Domain/Protein_InterPro/Protein_InterPro.oxl`.Now you have a network showing all InterPro domains for all proteins. Let's do the same for PFam domains.
 
-At this stage, we have at least three networks - one linking genes to proteins, one linking proteins to PFam domains and one linking _B. oleracea_ proteins to InterPro domains. For ease of working we'll merge these three networks into one using this XML:
+Go to BioMart, but instead of selecting InterPro just select "Protein stable ID" for _B. oleracea_ and "Pfam ID". The resulting table should have two columns only. Save that table into `organisms/BrassicaOleracea/Protein_Domain/Protein_PFam/Protein_Pfam.txt`. We will parse it using the Ondex Console again:
+
+```Javascript
+
+p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/organisms/Brassicaoleracea/Protein_Domain/Protein_PFam/Protein_Pfam_fixed.txt", "\\t+",1));
+c1 = p.newConceptPrototype(defAccession(0,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
+c2 = p.newConceptPrototype(defAccession(1,"PFAM",false), defCC("ProtDomain"), defDataSource("ENSEMBL"), defName(1));
+
+p.newRelationPrototype(c1, c2, defRT("has_domain"));
+s = p.parse();
+```
+
+Now you have a similar network to the above one, but just connecting PFam domains instead of InterPro domains. Save the resulting graph: `organisms/BrassicaOleracea/Protein_Domain/Protein_PFam/Protein_Pfam.oxl`.
+
+## Connecting the sub-networks into one big network
+
+At this stage, we have at least three networks - one linking genes to proteins, one linking proteins to PFam domains and one linking _B. oleracea_ proteins to InterPro domains. For ease of working we'll merge these three networks into one using XML:
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -178,6 +192,11 @@ At this stage, we have at least three networks - one linking genes to proteins, 
   </Workflow>
 </Ondex>
 ```
+This will compare the names of all concepts/nodes in the network and merge them if they are identical. After running this XML either using Ondex-mini or Ondex, you have one network showing the PFam and InterPro domains for all proteins encoded by their respective genes.
+
+## Homology
+
+Next, we'll see whether we can connect some homologous proteins to our _B. oleracea_ proteins.
 
 ### BioMart
 
