@@ -48,9 +48,71 @@ x-- xnets (this folder contains the final workflows which will pull all of the a
 For the rest of this document we'll go through each of these folders.
 
 ## Homology
+
+### Organisms
+
+We will start with the gene and protein network since that is the most basic one we will build the entire network on.
+
+### Gene_Protein
+
+We are now in `organisms/BrassicaOleracea/Gene_Protein`. Here we'll store the gff3 file and the peptides fasta file of _Brassica oleracea_ from [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/fasta/brassica_oleracea/pep/) and [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/gff3/brassica_oleracea/). Of course, gunzip these files. Important: Remove all lines of the gff3-file that are not of type "gene", i.e., remove "repeat_region", "CDS", "exon" etc.
+
+In Ondex, you can create a knowledge network in three ways: Using the point-and-click interface and the Integrator tool, using an XML file, and using the Ondex console. The point-and-click interface is the easiest to use, but you run into problems with larger datasets that you need to analyse on remote servers. The XML file is a bit more complicated to write, but as long as you keep the Ondex Integrator tool open you should be fine. The Ondex console is best kept for those tasks where there is no Ondex plugin yet, or for simple tab-delimited formats where a plugin would be a bit overkill.
+
+In this case, we'll use a (currently experimental) plugin called "FASTA and GFF3". Start Ondex using `bash ondex/runme.sh`, click on "Start a new graph", click on "Tools", and then "Integrator". As the plugin is currently "experimental" you cannot automatically see it - therefore, click on "Configure" in the Integrator window and remove the tick at "Show stable plugins only". Under "Parser", you should see three groups now: "Discontinued", "Stable" and "Experimental". Click on "Experimental" and double-click on "FASTA and GFF3". On the right side, you should now see two "steps": "New memory graph" and "FASTA and GFF3". This is the way workflows are handled, you can string as many steps together as you'd like.
+
+In "FASTA and GFF3", set the GFF3 File and the Fasta File to what you've just downloaded and extracted for _B. oleracea_. In TaxId, set the taxonomy ID to the one your organism has - in this case, 109376. "Accession" and "DataSource" are two fields that describe where you can find more information on these genes.
+
+Whatever you enter in "Accession" will be used as a link in the final graph to an external database - for example, if you enter "TAIR", then all genes and protein IDs will have a link to the TAIR database. In Ondex there is a file storing all possible external links (to which you can add your own databases, just restart Ondex afterwards), see `ondex/data/importdata/htmlaccessionlink/mappings.txt`.
+
+"DataSource" describes where you downloaded the data from.
+
+Lastly in the Integrator Tool, open "Export" (first element in the list of plugins), open "Stable", and click "OXL Export". Set the "Export File" to something like `organisms/BrassicaOleracea/Gene_Protein/Gene_Protein.oxl`.
+
+ALTERNATIVE: You can do the same thing using an XML file (which is better for reproducing results), here is an example file to load gff3 and fasta file:
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<Ondex version="3.0">
+  <Workflow>
+    <Graph name="memorygraph">
+      <Arg name="GraphName">default</Arg>
+      <Arg name="graphId">default</Arg>
+    </Graph>
+    <Parser name="fastagff">
+      <Arg name="GFF3 File">qtlnetminer/organisms/BrassicaOleracea/Gene-Protein/Brassica_oleracea.v2.1.26.gene.gff3</Arg>
+      <Arg name="Fasta File">qtlnetminer/organisms/BrassicaOleracea/Gene-Protein/Brassica_oleracea.v2.1.26.pep.all.fa</Arg>
+      <Arg name="TaxId">109376</Arg>
+      <Arg name="Accession">ENSEMBL_PLANTS</Arg>
+      <Arg name="DataSource">Bolbase</Arg>
+      <Arg name="Column of the genes">1</Arg>
+      <Arg name="Column of the proteins">3</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Export name="oxl">
+      <Arg name="pretty">true</Arg>
+      <Arg name="ExportIsolatedConcepts">true</Arg>
+      <Arg name="GZip">true</Arg>
+      <Arg name="ExportFile">qtlnetminer/organisms/BrassicaOleracea/Gene_Protein/Gene_Protein.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Export>
+    <Export name="graphinfo">
+      <Arg name="ExportFile">qtlnetminer/organisms/BrassicaOleracea/Gene_Protein/Gene_Protein2.xml</Arg>
+      <Arg name="graphId">default</Arg>
+    </Export>
+  </Workflow>
+</Ondex>
+```
+
+As you can see, the steps and plugins are the same. You can either run these steps in Ondex' Integrator by clicking "File -> Open" and opening the xml, or by using ondex-mini:
+
+    bash ondex-mini/runme.sh tlnetminer/organisms/BrassicaOleracea/Gene_Protein/Gene_Protein.xml
+
+This will give you the same results. Once you have finished loading the gff3 file, test the resulting graph in Ondex whether everything was loaded correctly - are the genes and proteins connected via a relation? Are the names and labels correct? If everything looks OK, congratulations, you have your beginner's network of genes connected to the proteins they encode.
+
 ### BioMart
 
-For this section, we'll get the required data from BioMart and transform it into a Ondex network. First, go on [BioMart](http://plants.ensembl.org/biomart/martview/b0290503aa21e7aa6465382793942ba3) and choose "Brassica oleracea". 
+Here we'll get the required data from BioMart and transform it into a Ondex network connecting _B. oleracea_'s proteins to their homologues. First, go on [BioMart](http://plants.ensembl.org/biomart/martview/b0290503aa21e7aa6465382793942ba3) and choose "Brassica oleracea". 
 
 Click on "attributes", click on "Homologs", for now we'll get the homologs for _A. thaliana_. Under "Gene", de-select everything under "Gene Attributes" and select only "Protein stable ID". Then open "Orthologs" and select "Arabidopsis thaliana protein stable ID", "Homology type", "% identity", "Arabidopsis thaliana % identity" and "Orthology confidence [0 low, 1 high]". 
 
