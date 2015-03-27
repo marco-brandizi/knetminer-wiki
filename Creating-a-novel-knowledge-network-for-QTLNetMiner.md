@@ -297,3 +297,117 @@ s = pp.parse();
 This will insert all of the BLAST details like e-value etc. as attributes to the relation (edges) in the knowledge graph. For posterity, save the code under `homology/Decypher/Boleracea_Bnapus_Decypher_console.txt` and save the resulting knowledge graph in `homology/Decypher/Boleracea_Bnapus_Decypher_BlastP.oxl`.
 
 OPTIONAL: You can of course run BLAST against many more databases and insert the results here - currently, the _Brassica oleracea_ graph also contains Decypher results using the UniProtKB database.
+
+## Putting it all into one massive network
+
+You can now merge all of the above, plus the pre-made networks for _A. thaliana_ and UniProtKB from Rothamsted Research using this XML file:
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<Ondex version="3.0">
+  <Workflow>
+    <Graph name="memorygraph">
+      <Arg name="GraphName">default</Arg>
+      <Arg name="graphId">default</Arg>
+    </Graph>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/organisms/Brassicaoleracea/Brassicaoleracea.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/references/Arabidopsis/Arabidopsis.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/references/Plants/Plants.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/homology/BioMart/Boleracea_Arabidopsis.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/homology/BioMart/Boleracea_Brapa.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+       <Arg name="InputFile">qtlnetminer/homology/Decypher/Boleracea_Plants_Decypher_BlastP.oxl</Arg>
+       <Arg name="graphId">default</Arg>
+    </Parser>-->
+    <Parser name="oxl">
+       <Arg name="InputFile">qtlnetminer/homology/Decypher/Boleracea_Bnapus_Decypher_BlastP.oxl</Arg>
+       <Arg name="graphId">default</Arg>
+    </Parser>-->
+    <Parser name="genericobo">
+      <Arg name="OboType">GO</Arg>
+      <Arg name="Obsoletes">false</Arg>
+      <Arg name="InputFile">qtlnetminer/ontologies/gene_ontology.1_2.obo</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Mapping name="lowmemoryaccessionbased">
+      <Arg name="IgnoreAmbiguity">false</Arg>
+      <Arg name="RelationType">collapse_me</Arg>
+      <Arg name="WithinDataSourceMapping">true</Arg>
+      <Arg name="graphId">default</Arg>
+      <Arg name="ConceptClassRestriction">Protein</Arg>
+      <Arg name="DataSourceRestriction">TAIR</Arg>
+      <Arg name="DataSourceRestriction">UNIPROTKB</Arg>
+      <Arg name="DataSourceRestriction">ENSEMBL_PLANTS</Arg>
+    </Mapping>
+    <Mapping name="lowmemoryaccessionbased">
+      <Arg name="IgnoreAmbiguity">false</Arg>
+      <Arg name="RelationType">collapse_me</Arg>
+      <Arg name="WithinDataSourceMapping">false</Arg>
+      <Arg name="graphId">default</Arg>
+      <Arg name="ConceptClassRestriction">BioProc</Arg>
+      <Arg name="ConceptClassRestriction">MolFunc</Arg>
+      <Arg name="ConceptClassRestriction">CelComp</Arg>
+      <Arg name="DataSourceRestriction">GO</Arg>
+    </Mapping>
+    <Mapping name="lowmemoryaccessionbased">
+      <Arg name="IgnoreAmbiguity">false</Arg>
+      <Arg name="RelationType">collapse_me</Arg>
+      <Arg name="WithinDataSourceMapping">true</Arg>
+      <Arg name="graphId">default</Arg>
+      <Arg name="ConceptClassRestriction">Publication</Arg>
+      <Arg name="ConceptClassRestriction">ProtDomain</Arg>
+      <Arg name="ConceptClassRestriction">EC</Arg>
+    </Mapping>
+    <Transformer name="relationcollapser">
+      <Arg name="CloneAttributes">true</Arg>
+      <Arg name="CopyTagReferences">true</Arg>
+      <Arg name="graphId">default</Arg>
+      <Arg name="RelationType">collapse_me</Arg>
+    </Transformer>
+    <Mapping name="external2go">
+      <Arg name="InputFile">qtlnetminer/ontologies/ec2go.txt</Arg>
+      <Arg name="fromCV">EC</Arg>
+      <Arg name="fromConceptClass">EC</Arg>
+      <Arg name="graphId">default</Arg>
+    </Mapping>
+    <Mapping name="external2go">
+      <Arg name="InputFile">qtlnetminer/ontologies/interpro2go.txt</Arg>
+      <Arg name="fromCV">IPRO</Arg>
+      <Arg name="fromConceptClass">ProtDomain</Arg>
+      <Arg name="graphId">default</Arg>
+    </Mapping>
+    <Mapping name="external2go">
+      <Arg name="InputFile">qtlnetminer/ontologies/pfam2go.txt</Arg>
+      <Arg name="fromCV">PFAM</Arg>
+      <Arg name="fromConceptClass">ProtDomain</Arg>
+      <Arg name="graphId">default</Arg>
+    </Mapping>
+    <Export name="oxl">
+      <Arg name="pretty">true</Arg>
+      <Arg name="ExportIsolatedConcepts">true</Arg>
+      <Arg name="GZip">true</Arg>
+      <Arg name="ExportFile">qtlnetminer/xnets/brassnet/BrassOleNet_2015.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Export>
+    <Export name="graphinfo">
+      <Arg name="ExportFile">qtlnetminer/xnets/brassnet/BrassOleNet_Report.xml</Arg>
+      <Arg name="graphId">default</Arg>
+    </Export>
+  </Workflow>
+</Ondex>
+```
