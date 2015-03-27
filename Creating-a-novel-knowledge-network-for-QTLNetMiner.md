@@ -72,7 +72,7 @@ Now there are a few lines where the _B. oleracea_ proteins did not show a homolo
 http://plants.ensembl.org/biomart/martview?VIRTUALSCHEMANAME=plants_mart_26&ATTRIBUTES=boleracea_eg_gene.default.homologs.ensembl_peptide_id|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_ensembl_peptide|boleracea_eg_gene.default.homologs.athaliana_eg_orthology_type|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_perc_id|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_perc_id_r1|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_is_tree_compliant&FILTERS=&VISIBLEPANEL=resultspanel
 ```
 
-Clicking on that URL should re-generate your table, useful for the feature. *IMPORTANT*: as you can see, this URL uses the database "plants_mart_26". When BioMart updates its databases, the old versions seem to get deleted. So if you try to access this table in the feature and get an error, check which database version they've updated to (30? 33?) and replace the number in plants_mart_26 by the appropriate number. The link should then work again (of course, you will get slightly different results since the database has changed).
+Clicking on that URL should re-generate your table, useful for the future. **IMPORTANT**: as you can see, this URL uses the database "plants_mart_26". When BioMart updates its databases, the old versions seem to get deleted. So if you try to access this table in the feature and get an error, check which database version they've updated to (30? 33?) and replace the number in plants_mart_26 by the appropriate number. The link should then work again (of course, you will get slightly different results since the database has changed).
 
 Let's load that table into Ondex. Open Ondex using `bash ondex/runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is some example code to create a graph out of it:
 
@@ -101,4 +101,48 @@ p.newRelationPrototype(c1, c2, defRT("ortho"), defEvidence("EnsemblCompara"), de
 s = p.parse();
 ```
 
-AS you can see, the column names have changed. Save the code in `homology/BioMart/Boleracea_Brapa_console.txt`, save the graph in `homology/BioMart/Boleracea_Brapa.oxl`.
+As you can see, the column names have changed. Save the code in `homology/BioMart/Boleracea_Brapa_console.txt`, save the graph in `homology/BioMart/Boleracea_Brapa.oxl`.
+
+OPTIONAL: Depending on the organism you use, you can load as many homologies as you'd like in this step.
+
+### Decypher
+
+This folder contains homologies based on Decypher BLAST runs. You can also use "standard" BLAST here as long as you slightly change the code used in Ondex. For this example, we'll describe a Decypher run against the _Brassica napus_ Darmor proteins from [Genoscope](http://www.genoscope.cns.fr/brassicanapus/data/Brassica_napus.annotation_v5.pep.fa.gz). After running Decypher, we received a table like this:
+
+```
+QUERYLOCUS      TARGETLOCUS     SCORE   SIGNIFICANCE    PERCENTALIGNMENT        PERCENTQUERY    PERCENTTARGET   QUERYSTART      QUERYEND        TARGETSTART     TARGETEND       QUERYLENGTH     TARGETLENGTH    ALIGNMENTLENGTH
+Bo00285s010.1   GSBRNA2T00118962001     326.25  6.4e-089        40      33      29      110     574     114     577     575     657     475
+Bo00285s020.1   GSBRNA2T00102232001     162.15  8.0e-040        65      25      12      1       126     1       130     333     680     131
+Bo00285s050.1   GSBRNA2T00088828001     142.12  5.3e-034        90      28      22      82      157     27      102     240     301     76
+(etc.)
+```
+
+Again, save the table with BLAST results as `homology/Decypher/Boleracea_Bnapus_Decypher_BlastP.tab`. We will use all of this information to connect the concepts in the knowledge graph, this is the script to import the above table into Ondex using the Ondex console:
+
+```Javascript
+pp = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/homology/Decypher/Boleracea_Bnapus_Decypher_BlastP.tab", "\\t+", 1));
+
+c1 = pp.newConceptPrototype(defAccession(0,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
+c2 = pp.newConceptPrototype(defAccession(1,"GENOSCOPE",false), defDataSource("GENOSCOPE"), defCC("Protein"));
+
+pp.newRelationPrototype(c1, c2, defRT("h_s_s"), defEvidence("Decypher_Terra-BlastP")
+, defAttribute(2, "SCORE", "NUMBER", false)
+, defAttribute(3, "E-VALUE", "NUMBER", false)
+, defAttribute(4, "PERCENTALIGNMENT", "NUMBER", false)
+, defAttribute(5, "PERCENTQUERY", "NUMBER", false)
+, defAttribute(6, "PERCENTTARGET", "NUMBER", false)
+, defAttribute(7, "QUERYSTART", "NUMBER", false)
+, defAttribute(8, "QUERYEND", "NUMBER", false)
+, defAttribute(9, "TARGETSTART", "NUMBER", false)
+, defAttribute(10, "TARGETEND", "NUMBER", false)
+, defAttribute(11, "QUERYLENGTH", "NUMBER", false)
+, defAttribute(12, "TARGETLENGTH", "NUMBER", false)
+, defAttribute(13, "ALIGNMENTLENGTH", "NUMBER", false)
+);
+
+s = pp.parse();
+```
+
+This will insert all of the BLAST details like e-value etc. as attributes to the relation (edges) in the knowledge graph. For posterity, save the code under `homology/Decypher/Boleracea_Bnapus_Decypher_console.txt` and save the resulting knowledge graph in `homology/Decypher/Boleracea_Bnapus_Decypher_BlastP.oxl`.
+
+OPTIONAL: You can of course run BLAST against many more databases and insert the results here - currently, the _Brassica oleracea_ graph also contains Decypher results using the UniProtKB database.
