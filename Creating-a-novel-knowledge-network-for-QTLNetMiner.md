@@ -17,6 +17,8 @@ In this case, we'll work with _Brassica oleracea_ ([see Ensembl](http://plants.e
 Since we will create a few smaller "sub"-networks it is useful to create folders for each subnetwork. "Officially" each organism's project is structured like this (you can see it "in action" [here](https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/))
 
 ```
+qtlnetminer
+|
 |-- homology (parental folder for all homology related information)
 |   |
 |   |-- BioMart (this folder contains all homology information from BioMart)
@@ -36,9 +38,48 @@ Since we will create a few smaller "sub"-networks it is useful to create folders
 |
 |-- pubmed (this folder contains all MEDLINE/PubMed entries for Arabidopsis, download from https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/pubmed/ )
 |
-|-- references (this folder contains all completed knowledge graphs, at the time of this writing, it's _A. thaliana_ and UniProtKB, you can download all data from https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/references/ )
+|-- references (this folder contains all completed knowledge graphs, at the time of this writing, it's A. thaliana and UniProtKB, you can download all data from https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/references/ )
 |
 x-- xnets (this folder contains the final workflows which will pull all of the above folders together)
-    |-- brassnet (this folder will contain the final workflow to pull all _Brassica oleracea_ data together)
+    |-- brassnet (this folder will contain the final workflow to pull all Brassica oleracea data together)
     x-- wheatnet (etc.)
 ```
+
+For the rest of this document we'll go through each of these folders.
+
+## Homology
+### BioMart
+
+For this section, we'll get the required data from BioMart and transform it into a Ondex network. First, go on [BioMart](http://plants.ensembl.org/biomart/martview/b0290503aa21e7aa6465382793942ba3) and choose "Brassica oleracea". 
+
+Click on "attributes", click on "Homologs", for now we'll get the homologs for _A. thaliana_. Under "Gene", de-select everything under "Gene Attributes" and select only "Protein stable ID". Then open "Orthologs" and select "Arabidopsis thaliana protein stable ID", "Homology type", "% identity", "Arabidopsis thaliana % identity" and "Orthology confidence [0 low, 1 high]". 
+
+Then, scroll back up and click "Results" on the top left corner. You'll see a few example results, click on "Export all results to"'s "Go" button to get all results as a tab-delimited file. The header of that file should look something like this:
+
+```
+Protein stable ID	Arabidopsis thaliana protein stable ID	Homology type	% identity	Arabidopsis thaliana % identity	Orthology confidence [0 low, 1 high]
+Bo7g103870.1	AT4G15630.1	ortholog_many2many	86	86	1
+Bo7g103870.1	AT4G15620.1	ortholog_many2many	84	84	1
+Bo7g104070.1	AT4G15880.1	ortholog_one2many	75	71	1
+Bo7g104270.1					
+Bo7g104470.1	AT4G16490.1	ortholog_one2many	87	84	1
+(etc.)
+```
+
+Now there are a few lines where the _B. oleracea_ proteins did not show a homology to _A. thaliana_ like 'Bo7g104270.1' here, delete these using any tool or programming language you like. Save that table under homology/BioMart/Boleracea_Arabidopsis.txt.
+
+We will now load that table into Ondex. Open Ondex using `bash runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is some example code to create a graph out of it:
+
+```Javascript
+p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/homology/BioMart/Boleracea_Arabidopsis.txt", "\\t+",1));
+c1 = p.newConceptPrototype(defAccession(0,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
+c2 = p.newConceptPrototype(defAccession(1,"TAIR",false), defDataSource("TAIR"), defCC("Protein"));
+
+p.newRelationPrototype(c1, c2, defRT("ortho"), defEvidence("EnsemblCompara"), defAttribute(2, "Homology_type", "TEXT", false), defAttribute(3, "%Identity_Arabidopsis", "NUMBER", false), defAttribute(4, "%Identity_Boleracea", "NUMBER", false), defAttribute(5, "Orthology_confidence", "NUMBER", false));
+
+s = p.parse();
+```
+
+Change the path and the data accessions and sources to the ones you have for your data, this should work for _Brassica_ (new concept prototype called c1) and _Arabidopsis_ (c2). If you've used exactly the same order of columns like the above table, then you don't need to change anything in the creationg of the new relation prototype. This will run for about 30s on any regular laptop and create a new graph.
+
+Use Ondex' Keyword filter field on the top right to search for any single gene and see if the graph was created correctly (are the nodes named correctly? Is there a connection between the _Arabidopsis_ nodes and the _Brassica_ nodes?). If everything looks OK, export the graph using "File -> Save graph as.." to homology/BioMart/Boleracea_Arabidopsis.txt .
