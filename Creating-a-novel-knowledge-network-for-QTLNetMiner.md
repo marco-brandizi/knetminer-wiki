@@ -34,7 +34,7 @@ qtlnetminer
 |   |       |-- Protein_InterPro (all protein domains from InterPro we can find)
 |   |       x-- Protein_PFam  (all protein domains from PFam)
 |   |
-|   |-- Wheat (etc.)
+|   x-- Wheat (etc.)
 |
 |-- pubmed (this folder contains all MEDLINE/PubMed entries for Arabidopsis, download from https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/pubmed/ )
 |
@@ -66,9 +66,15 @@ Bo7g104470.1	AT4G16490.1	ortholog_one2many	87	84	1
 (etc.)
 ```
 
-Now there are a few lines where the _B. oleracea_ proteins did not show a homology to _A. thaliana_ like 'Bo7g104270.1' here, delete these using any tool or programming language you like. Save that table under homology/BioMart/Boleracea_Arabidopsis.txt.
+Now there are a few lines where the _B. oleracea_ proteins did not show a homology to _A. thaliana_ like 'Bo7g104270.1' here, delete these using any tool or programming language you like. Save that table under `homology/BioMart/Boleracea_Arabidopsis.txt`. At this point, it may be advisable to save the URL of the table you generated - on the BioMart page, click "URL" in the top right corner, and you'll get something like: 
 
-We will now load that table into Ondex. Open Ondex using `bash runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is some example code to create a graph out of it:
+```
+http://plants.ensembl.org/biomart/martview?VIRTUALSCHEMANAME=plants_mart_26&ATTRIBUTES=boleracea_eg_gene.default.homologs.ensembl_peptide_id|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_ensembl_peptide|boleracea_eg_gene.default.homologs.athaliana_eg_orthology_type|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_perc_id|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_perc_id_r1|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_is_tree_compliant&FILTERS=&VISIBLEPANEL=resultspanel
+```
+
+Clicking on that URL should re-generate your table, useful for the feature. *IMPORTANT*: as you can see, this URL uses the database "plants_mart_26". When BioMart updates its databases, the old versions seem to get deleted. So if you try to access this table in the feature and get an error, check which database version they've updated to (30? 33?) and replace the number in plants_mart_26 by the appropriate number. The link should then work again (of course, you will get slightly different results since the database has changed).
+
+Let's load that table into Ondex. Open Ondex using `bash ondex/runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is some example code to create a graph out of it:
 
 ```Javascript
 p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/homology/BioMart/Boleracea_Arabidopsis.txt", "\\t+",1));
@@ -80,6 +86,19 @@ p.newRelationPrototype(c1, c2, defRT("ortho"), defEvidence("EnsemblCompara"), de
 s = p.parse();
 ```
 
-Change the path and the data accessions and sources to the ones you have for your data, this should work for _Brassica_ (new concept prototype called c1) and _Arabidopsis_ (c2). If you've used exactly the same order of columns like the above table, then you don't need to change anything in the creationg of the new relation prototype. This will run for about 30s on any regular laptop and create a new graph.
+Change the path and the data accessions and sources to the ones you have for your data, this should work for _Brassica_ (new concept prototype called c1) and _Arabidopsis_ (c2). If you've used exactly the same order of columns like the above table, then you don't need to change anything in the creation of the new relation prototype. This will run for about 30s on any regular laptop and create a new graph.
 
-Use Ondex' Keyword filter field on the top right to search for any single gene and see if the graph was created correctly (are the nodes named correctly? Is there a connection between the _Arabidopsis_ nodes and the _Brassica_ nodes?). If everything looks OK, export the graph using "File -> Save graph as.." to homology/BioMart/Boleracea_Arabidopsis.txt .
+Use Ondex' Keyword filter field on the top right to search for any single gene and see if the graph was created correctly (are the nodes named correctly? Is there a connection between the _Arabidopsis_ nodes and the _Brassica_ nodes?). If everything looks OK, export the graph using "File -> Save graph as.." to `homology/BioMart/Boleracea_Arabidopsis.oxl`. It's also advisable to copy/paste the above piece of code into something like `homology/BioMart/Boleracea_Arabidopsis_console.txt` for later. You've now finished your very first graph!
+
+Let's repeat the same thing using homology to _Brassica rapa_: Use the _Brassica oleracea_ dataset, click "Protein stable IDs", and click _Brassica rapa_'s "Homology type", "% identity", "Brassica rapa % identity" and "Orthology confidence [0 low, 1 high]". You'll get a similar table to the above one, export it to tab-delimited text-file in `homology/BioMart/Boleracea_Brapa.txt`, delete the empty lines, and load it into Ondex using slightly changed code to the above:
+
+```Javascript
+p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/homology/BioMart/Boleracea_Brapa.txt", "\\t+",1));
+c1 = p.newConceptPrototype(defAccession(0,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
+c2 = p.newConceptPrototype(defAccession(1,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
+
+p.newRelationPrototype(c1, c2, defRT("ortho"), defEvidence("EnsemblCompara"), defAttribute(2, "Homology_type", "TEXT", false), defAttribute(3, "%Identity_Brapa", "NUMBER", false), defAttribute(4, "%Identity_Boleracea", "NUMBER", false), defAttribute(5, "Orthology_confidence", "NUMBER", false));
+s = p.parse();
+```
+
+AS you can see, the column names have changed. Save the code in `homology/BioMart/Boleracea_Brapa_console.txt`, save the graph in `homology/BioMart/Boleracea_Brapa.oxl`.
