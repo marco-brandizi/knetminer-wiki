@@ -110,6 +110,75 @@ As you can see, the steps and plugins are the same. You can either run these ste
 
 This will give you the same results. Once you have finished loading the gff3 file, test the resulting graph in Ondex whether everything was loaded correctly - are the genes and proteins connected via a relation? Are the names and labels correct? If everything looks OK, congratulations, you have your beginner's network of genes connected to the proteins they encode.
 
+## Adding protein domains
+
+Now let's add some protein domains. You can get domains from [BioMart](http://plants.ensembl.org/biomart/martview/b0290503aa21e7aa6465382793942ba3),  choose "Brassica oleracea". Click on "Features", de-select everything under "Gene Attributes" and select only "Protein stable ID". Open "Protein Domains" and select "InterPro ID", "InterPro short description" and "InterPro description". You'll see a few example rows. Click on "Results" in the top left corner and you'll see the beginning of the table, download the whole table using the "Go" button into `organisms/Brassicaoleracea/Protein_Domain/Protein_InterPro/Protein_InterPro.txt`.
+
+We'll use the Ondex Console to load this data. Open Ondex using `bash ondex/runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is the code to create a graph out of the InterPro data:
+
+```Javascript
+p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/organisms/Brassicaoleracea/Protein_Domain/Protein_InterPro/Protein_InterPro.txt", "\\t+",1));
+c1 = p.newConceptPrototype(defAccession(0,"ENSEMBL_PLANTS",false), defDataSource("ENSEMBL_PLANTS"), defCC("Protein"));
+c2 = p.newConceptPrototype(defAccession(1,"IPRO",false), defCC("ProtDomain"), defDataSource("ENSEMBL"), defName(2), defAttribute(3, "Description", "TEXT", true));
+
+p.newRelationPrototype(c1, c2, defRT("has_domain"));
+s = p.parse();
+```
+
+## Putting it together for the organism
+
+At this stage, we have at least three networks - one linking genes to proteins, one linking proteins to PFam domains and one linking _B. oleracea_ proteins to InterPro domains. For ease of working we'll merge these three networks into one using this XML:
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<Ondex version="3.0">
+  <Workflow>
+    <Graph name="memorygraph">
+      <Arg name="GraphName">default</Arg>
+      <Arg name="graphId">default</Arg>
+    </Graph>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/organisms/Brassicaoleracea/Gene_Protein/Gene_Protein.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/organisms/Brassicaoleracea/Protein_Domain/Protein_InterPro/Protein_InterPro_fixed.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Parser name="oxl">
+      <Arg name="InputFile">qtlnetminer/organisms/Brassicaoleracea/Protein_Domain/Protein_PFam/Protein_Pfam_fixed.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Parser>
+    <Mapping name="lowmemoryaccessionbased">
+      <Arg name="IgnoreAmbiguity">false</Arg>
+      <Arg name="RelationType">collapse_me</Arg>
+      <Arg name="WithinDataSourceMapping">true</Arg>
+      <Arg name="graphId">default</Arg>
+      <Arg name="ConceptClassRestriction">Gene</Arg>
+      <Arg name="ConceptClassRestriction">Protein</Arg>
+      <Arg name="DataSourceRestriction">ENSEMBL_PLANTS</Arg>
+    </Mapping>
+    <Transformer name="relationcollapser">
+      <Arg name="CloneAttributes">true</Arg>
+      <Arg name="CopyTagReferences">true</Arg>
+      <Arg name="graphId">default</Arg>
+      <Arg name="RelationType">collapse_me</Arg>
+    </Transformer>
+    <Export name="oxl">
+      <Arg name="pretty">true</Arg>
+      <Arg name="ExportIsolatedConcepts">true</Arg>
+      <Arg name="GZip">true</Arg>
+      <Arg name="ExportFile">qtlnetminer/organisms/Brassicaoleracea/Brassicaoleracea.oxl</Arg>
+      <Arg name="graphId">default</Arg>
+    </Export>
+    <Export name="graphinfo">
+      <Arg name="ExportFile">qtlnetminer/organisms/Brassicaoleracea/Brassicaoleracea_Report.xml</Arg>
+      <Arg name="graphId">default</Arg>
+    </Export>
+  </Workflow>
+</Ondex>
+```
+
 ### BioMart
 
 Here we'll get the required data from BioMart and transform it into a Ondex network connecting _B. oleracea_'s proteins to their homologues. First, go on [BioMart](http://plants.ensembl.org/biomart/martview/b0290503aa21e7aa6465382793942ba3) and choose "Brassica oleracea". 
@@ -136,7 +205,8 @@ http://plants.ensembl.org/biomart/martview?VIRTUALSCHEMANAME=plants_mart_26&ATTR
 
 Clicking on that URL should re-generate your table, useful for the future. **IMPORTANT**: as you can see, this URL uses the database "plants_mart_26". When BioMart updates its databases, the old versions seem to get deleted. So if you try to access this table in the feature and get an error, check which database version they've updated to (30? 33?) and replace the number in plants_mart_26 by the appropriate number. The link should then work again (of course, you will get slightly different results since the database has changed).
 
-Let's load that table into Ondex. Open Ondex using `bash ondex/runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is some example code to create a graph out of it:
+Let's load that table into Ondex. 
+Here's the code to create a graph out of it:
 
 ```Javascript
 p = new PathParser(getActiveGraph(), new DelimitedFileReader("qtlnetminer/homology/BioMart/Boleracea_Arabidopsis.txt", "\\t+",1));
