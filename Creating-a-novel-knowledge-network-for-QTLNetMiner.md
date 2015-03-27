@@ -300,7 +300,9 @@ OPTIONAL: You can of course run BLAST against many more databases and insert the
 
 ## Putting it all into one massive network
 
-You can now merge all of the above, plus the pre-made networks for _A. thaliana_ and UniProtKB from Rothamsted Research using this XML file:
+You can now merge all of the above, plus the pre-made networks for _A. thaliana_ and UniProtKB from Rothamsted Research using this XML file. If you're missing any of the Arabidopsis or Plants files, you can download them from [here](https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/)
+
+It would not be wise to run this XML file on a laptop, it's best to use ondex-mini to run it on a server with about 15 to 20 GB of RAM. It is also not recommended to open the resulting network in Ondex, it's better to load the final OXL file into the QTLNetMiner software and then to interact with the network using the web interface.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -411,3 +413,5 @@ You can now merge all of the above, plus the pre-made networks for _A. thaliana_
   </Workflow>
 </Ondex>
 ```
+
+The final OXL (in this case named `qtlnetminer/xnets/brassnet/BrassOleNet_2015.oxl`) will be used in the QTLNetMiner server.
