@@ -2,7 +2,7 @@ Welcome to the QTLNetMiner wiki!
 
 This wiki contains detailed information about the installation and development of QTLNetMiner, and how to set up a knowledge network using Ondex.
 
-### Really short overview
+### Brief overview
 
 [Ondex](http://www.ondex.org/index.shtml) is a program that creates graph-based knowledge network using (biological) data, mostly in the form of gene-protein networks and additional information (such as GO-terms or homologies) for these proteins. It represents genes or proteins in classes (aka nodes) that are connected by relations (aka edges) such as "encodes for".
 
