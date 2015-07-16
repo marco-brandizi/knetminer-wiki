@@ -4,6 +4,8 @@ The new version improves on the performance and rendering capabilities of the ex
 
 Now in QTLNetMiner Arabidopsis, Maize or Poplar, when users go to _Gene View_ and select one or more targets, they have the option of either using the old Java version (using the “_Show Network_” button) or the new version (using the “_New Network Viewer_” button) to view the network. The new Network Viewer opens in a new pop-up window (_users might need to allow pop-ups_).
 
+![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
+
 ## Features
 
 Some of its features are detailed below to help users get familiarised with it:
