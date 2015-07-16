@@ -1,4 +1,4 @@
-The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for the visualizing the network graphs, has now been deployed for QTLNetMiner **Arabidopsis**, **Poplar** and **Maize (prototype)**. 
+The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for the visualizing the network graphs, has now been deployed for QTLNetMiner **Arabidopsis**, **Poplar** and **Maize**. 
 
 The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer.
 
