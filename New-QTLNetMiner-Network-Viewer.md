@@ -1,6 +1,8 @@
 The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for the visualizing the network graphs, has now been deployed for QTLNetMiner **Arabidopsis**, **Poplar** and **Maize (prototype)**. The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer.
 Now in QTLNetMiner Arabidopsis, Maize or Poplar, when users go to _Gene View_ and select one or more targets, they have the option of either using the old Java version (using the “_Show Network_” button) or the new version (using the “_New Network Viewer_” button) to view the network. The new Network Viewer opens in a new pop-up window (_users might need to allow pop-ups_).
 
+## Features
+
 Some of its features are detailed below to help users get familiarised with it:
 
 * **Concepts** (nodes) are displayed using different symbols and colours like in the Java version (detailed in the Legend below the graph). **Relations** (edges) too use various colours depending on the type of concept, as in the old Java version.
