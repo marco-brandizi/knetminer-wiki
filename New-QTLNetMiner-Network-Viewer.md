@@ -6,15 +6,15 @@ The new pre-release version of the Network Viewer for **QTLNetMiner**, which use
 
 _Note: If the “New Network Viewer” button is not visible, users should empty the cache in their web browser and reload the QTLNetMiner webpage._
 
-**Search...**
+**1. Search...**
 
 ![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_1.png)
 
-**Select genes...**
+**2. Select genes...**
 
 ![Both Network Viewer Buttons](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_2.png)
 
-**Open new Network Viewer...**
+**3. View in new Network Viewer...**
 
 ![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
 
