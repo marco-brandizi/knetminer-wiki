@@ -1,10 +1,10 @@
-The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for  visualizing the network graphs can be tested **[here](https://ondex.rothamsted.ac.uk/QTLNetMinerMaize)**. 
+The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for  visualizing the network graphs can be tested **[here](https://ondex.rothamsted.ac.uk/QTLNetMinerMaize)**. This is what you need to do to see and test the new Network Viewer.
 
 1. Search using any query terms (Use ? for example queries)
-2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene, since this opens the old network viewer)
-3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (_users might need to allow pop-ups_).
+2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene since this opens the old network viewer)
+3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (_allow pop-ups in our browser_).
 
-_Note: If both buttons are not visible, users should empty the cache in their web browser and reload the QTLNetMiner webpage._
+_Note: If the “_New Network Viewer_” button is not visible, users should empty the cache in their web browser and reload the QTLNetMiner webpage._
 
 **Search...**
 
