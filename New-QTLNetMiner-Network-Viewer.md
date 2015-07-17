@@ -1,23 +1,25 @@
 The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for  visualizing the network graphs can be tested **[here](https://ondex.rothamsted.ac.uk/QTLNetMinerMaize)**. 
 
-The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer.
+1. Search using any query terms (Use ? for example queries)
+2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene, since this opens the old network viewer)
+3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (_users might need to allow pop-ups_).
 
-In QTLNetMiner, when users search using some query terms they are shown a table under _Gene View_ displaying the search results. Now, when users select one or more targets from the table (using their checkboxes), they have the option of either using the old Java version (using the “_Show Network_” button) or the new version (using the “_New Network Viewer_” button) to view the network. The first button launches the old Java-based embedded Network Viewer. When the second button is clicked, the new Network Viewer opens in a new _pop-up_ window (_users might need to allow pop-ups_).
+_Note: If both buttons are not visible, users should empty the cache in their web browser and reload the QTLNetMiner webpage._
 
-**Note:** Users can also use existing _sample queries_ (as shown below) to search the knowledge network with example queries.
+**Search...**
+
 ![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_1.png)
 
-### New Network Viewer button in Gene View
-After searching in QTLNetMiner using some query terms, the _Gene View_ table will be displayed with _two_ buttons underneath it (as shown below).
-**Note:** If both buttons are not visible, users should **_empty the cache_** in their web browser and reload the QTLNetMiner webpage.
+**Select genes...**
+
 ![Both Network Viewer Buttons](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_2.png)
 
-### New Network Viewer window
-Pressing the second button (the “_New Network Viewer_” button) launches the new Network Viewer in a new window, as shown below:
+**Open new Network Viewer...**
+
 ![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
 
 ### Features
-Some of its features are detailed below to help users get familiarised with it:
+The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer. Some of its features are detailed below to help users get familiarised with it:
 
 * **Concepts** (nodes) are displayed using different symbols and colours like in the Java version (detailed in the Legend below the graph). **Relations** (edges) too use various colours depending on the type of concept, as in the old Java version.
 
