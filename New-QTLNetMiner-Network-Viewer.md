@@ -1,10 +1,10 @@
-The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for the visualizing the network graphs, has now been deployed for the QTLNetMiner **[Maize](https://ondex.rothamsted.ac.uk/QTLNetMinerMaize)** prototype. 
+The new pre-release version of the Network Viewer for **QTLNetMiner**, which uses cytoscapeJS instead of JAVA for  visualizing the network graphs can be tested **[here](https://ondex.rothamsted.ac.uk/QTLNetMinerMaize)**. 
 
 The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer.
 
 In QTLNetMiner, when users search using some query terms they are shown a table under _Gene View_ displaying the search results. Now, when users select one or more targets from the table (using their checkboxes), they have the option of either using the old Java version (using the “_Show Network_” button) or the new version (using the “_New Network Viewer_” button) to view the network. The first button launches the old Java-based embedded Network Viewer. When the second button is clicked, the new Network Viewer opens in a new _pop-up_ window (_users might need to allow pop-ups_).
 
-**Note:** Users can also use existing _sample queries_ (as shown below) to search the knowledge network with example query terms and gene lists and performing specific Genome or QTL search.
+**Note:** Users can also use existing _sample queries_ (as shown below) to search the knowledge network with example queries.
 ![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_1.png)
 
 ### New Network Viewer button in Gene View
