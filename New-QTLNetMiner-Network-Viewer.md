@@ -2,7 +2,7 @@ The new pre-release version of the Network Viewer for **QTLNetMiner**, which use
 
 1. Search using any query terms (Use ? for example queries)
 2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene since this opens the old network viewer)
-3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (_allow pop-ups in our browser_).
+3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (_allow pop-ups in your browser_).
 
 _Note: If the “New Network Viewer” button is not visible, users should empty the cache in their web browser and reload the QTLNetMiner webpage._
 
