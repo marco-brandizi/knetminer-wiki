@@ -12,7 +12,7 @@ After searching in QTLNetMiner using some query terms, the _Gene View_ table wil
 **Note:** If both buttons are not visible, users should **_empty the cache_** in their web browser and reload the QTLNetMiner webpage.
 ![Both Network Viewer Buttons](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_2.png)
 
-### Network Viewer window
+### New Network Viewer window
 Pressing the second button (the “_New Network Viewer_” button) launches the new Network Viewer in a new window, as shown below:
 ![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
 
