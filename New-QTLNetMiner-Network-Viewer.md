@@ -6,7 +6,7 @@ Now in QTLNetMiner Maize, when users go to _Gene View_ and select one or more ta
 
 ### New Network Viewer button in Gene View
 After searching in QTLNetMiner using some query terms, the Gene View table should show up with _two_ buttons underneath it (as shown below). If both buttons are not visible, users should **empty the cache** in their browsers and reload the QTLNetMiner webpage.
-[Both Network Viewer Buttons](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_2.png)
+![Both Network Viewer Buttons](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_2.png)
 
 ### New Network Viewer in QTLNetMiner
 ![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
