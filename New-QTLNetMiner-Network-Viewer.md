@@ -2,13 +2,18 @@ The new pre-release version of the Network Viewer for **QTLNetMiner**, which use
 
 The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer.
 
-Now in QTLNetMiner Maize, when users go to _Gene View_ and select one or more targets, they have the option of either using the old Java version (using the “_Show Network_” button) or the new version (using the “_New Network Viewer_” button) to view the network. The first button launches the old Java-based embedded Network Viewer. When the second button is clicked, the new Network Viewer opens in a new pop-up window (_users might need to allow pop-ups_).
+In QTLNetMiner, when users search using some query terms they are shown a table under _Gene View_ displaying the search results. Now, when users select one or more targets from the table (using their checkboxes), they have the option of either using the old Java version (using the “_Show Network_” button) or the new version (using the “_New Network Viewer_” button) to view the network. The first button launches the old Java-based embedded Network Viewer. When the second button is clicked, the new Network Viewer opens in a new _pop-up_ window (_users might need to allow pop-ups_).
+
+**Note:** Users can also use existing _sample queries_ (as shown below) to search the knowledge network with example query terms and gene lists and performing specific Genome or QTL search.
+![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_1.png)
 
 ### New Network Viewer button in Gene View
-After searching in QTLNetMiner using some query terms, the Gene View table should show up with _two_ buttons underneath it (as shown below). If both buttons are not visible, users should **empty the cache** in their browsers and reload the QTLNetMiner webpage.
+After searching in QTLNetMiner using some query terms, the _Gene View_ table will be displayed with _two_ buttons underneath it (as shown below).
+**Note:** If both buttons are not visible, users should **_empty the cache_** in their web browser and reload the QTLNetMiner webpage.
 ![Both Network Viewer Buttons](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_2.png)
 
-### New Network Viewer in QTLNetMiner
+### Network Viewer window
+Pressing the second button (the “_New Network Viewer_” button) launches the new Network Viewer in a new window, as shown below:
 ![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
 
 ### Features
