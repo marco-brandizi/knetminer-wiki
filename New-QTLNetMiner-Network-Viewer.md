@@ -45,4 +45,4 @@ Some of its features are detailed below to help users get familiarised with it:
 
 * **Flagged genes**: All the genes are displayed as blue triangles but the gene(s) originally selected for viewing in the network window have a double border to visually distinguish them from other genes. These were shown in the old version with a blue flag next to them. 
 
-**Note:** While this new Network Viewer is stable, it is still under development and more features will be added to it in the near future and it will soon be _live_ on all the various QTLNetMiner instances.
+**_Note:_** While this new Network Viewer is stable, it is still under development and more features will be added to it in the near future and it will soon be _live_ on all the various QTLNetMiner instances.
