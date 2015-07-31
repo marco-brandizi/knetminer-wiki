@@ -16,6 +16,7 @@ _Note: If the “New Network Viewer” button is not visible, users should **emp
 
 **3. View in new Network Viewer...**
 
+![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
 
 ### Features
 The new version improves on the performance and rendering capabilities of the existing Java-based Network Viewer. Some of its features are detailed below to help users get familiarised with it:
