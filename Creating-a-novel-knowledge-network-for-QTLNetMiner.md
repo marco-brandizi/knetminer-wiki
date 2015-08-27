@@ -53,7 +53,7 @@ We will start with the gene and protein network since that is the most basic one
 
 ### Gene_Protein
 
-We are now in `organisms/BrassicaOleracea/Gene_Protein`. Here we'll store the gff3 file and the peptides fasta file of _Brassica oleracea_ from [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/fasta/brassica_oleracea/pep/) and [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/gff3/brassica_oleracea/). Of course, gunzip these files. Important: Remove all lines of the gff3-file that are not of type "gene", i.e., remove "repeat_region", "CDS", "exon" etc.
+We are now in `organisms/BrassicaOleracea/Gene_Protein`. Here we'll store the gff3 file and the peptides fasta file of _Brassica oleracea_ from [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/fasta/brassica_oleracea/pep/) and [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/gff3/brassica_oleracea/). Gunzip these files (optional, this example does not use zipped files). Important: Remove all lines of the gff3-file that are not of type "gene", i.e., remove "repeat_region", "CDS", "exon" etc.
 
 In Ondex, you can create a knowledge network in three ways: Using the point-and-click interface and the Integrator tool, using an XML file, and using the Ondex console. The point-and-click interface is the easiest to use, but you run into problems with larger datasets that you need to analyse on remote servers. The XML file is a bit more complicated to write, but as long as you keep the Ondex Integrator tool open you should be fine. The Ondex console is best kept for those tasks where there is no Ondex plugin yet, or for simple tab-delimited formats where a plugin would be a bit overkill.
 
