@@ -21,6 +21,7 @@
 
 
 ### Protein-Publication [UniProtKB]
+  - [At proteome XML] (http://www.uniprot.org/uniprot/?query=proteome:UP000006548&compress=yes&format=xml)
   - relations (pub_in): 34,884
   - concepts (Publication): 11,550
 
