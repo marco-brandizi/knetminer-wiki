@@ -1,24 +1,24 @@
 ## Arabidopsis network
 
-# Gene-Protein [Ensembl]
+### Gene-Protein [Ensembl]
 
-# Gene-GO [GOA]
+### Gene-GO [GOA]
 
-# Gene-Gene Interactions [BioGRID]
+### Gene-Gene Interactions [BioGRID]
   - physical
   - genetic
 
-# Gene-Phenotype [TAIR]
+### Gene-Phenotype [TAIR]
 
-# Publications [PubMed]
+### Publications [PubMed]
 
-# Gene-Publication [GOA, TAIR]
+### Gene-Publication [GOA, TAIR]
 
-# Protein-Publication [UniProtKB]
+### Protein-Publication [UniProtKB]
 
-# Protein-Pathway [AraCyc]
+### Protein-Pathway [AraCyc]
 
-# Ontologies
+### Ontologies
   - GO
   - TO
 
