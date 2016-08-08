@@ -18,7 +18,20 @@
 
 ### Protein-Pathway [AraCyc]
 
-### Ontologies
-  - GO
-  - TO
+### Gene-TO [Text Mining]
+
+
+## Other species
+
+### Plants
+  - Protein-GO [UniProtKB]
+  - Protein-Publication [UniProtKB]
+- Protein-Protein [Smith-Waterman]
+
+### Yeast
+  - Protein-GO [UniProtKB]
+  - Protein-Publication [UniProtKB]
+  - Protein-Protein [BioGRID]
+  - Protein-Protein [Inparanoid]
+
 
