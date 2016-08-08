@@ -5,7 +5,7 @@
   - [FASTA] (ftp://ftp.ensemblgenomes.org/pub/current/plants/fasta/arabidopsis_thaliana/pep/Arabidopsis_thaliana.TAIR10.pep.all.fa.gz)
 
 ### Gene-GO [GOA]
-  - [GAF 2.0] (ftp://ftp.geneontology.org/pub/go/ontology/go-basic.obo)
+  - [GAF 2.0] (http://www.geneontology.org/gene-associations/gene_association.tair.gz)
 
 ### Gene-Gene Interactions [BioGRID]
   - [TAB] (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.139/BIOGRID-ORGANISM-3.4.139.tab2.zip)
