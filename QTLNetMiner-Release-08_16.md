@@ -18,7 +18,8 @@
   - 57,600 PubMed abstracts
 
 ### Gene-Publication [GOA, TAIR]
-
+* [GAF 2.0] (http://www.geneontology.org/gene-associations/gene_association.tair.gz)
+* [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
 
 ### Protein-Publication [UniProtKB]
   - [At proteome XML] (http://www.uniprot.org/uniprot/?query=proteome:UP000006548&compress=yes&format=xml)
