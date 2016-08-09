@@ -29,18 +29,15 @@
 
 ### Gene-TO [Text Mining]
 
-
-## Other species
-
-### Plants
+### Sequence alignments to other Plants
+  - Protein@Arabidopsis-Protein@Plants::UniProtKB-SP [Smith-Waterman]
   - Protein-GO [UniProtKB]
   - Protein-Publication [UniProtKB]
-- Protein-Protein [Smith-Waterman]
 
-### Yeast
+### Orthologs in Yeast
+  - Protein@Arabidopsis-Protein@Yeast::UniProtKB-SP [Inparanoid]
   - Protein-GO [UniProtKB]
   - Protein-Publication [UniProtKB]
   - Protein-Protein [BioGRID]
-  - Protein-Protein [Inparanoid]
 
 
