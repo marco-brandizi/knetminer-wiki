@@ -4,6 +4,12 @@
 * [GFF3](ftp://ftp.ensemblgenomes.org/pub/current/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.32.gff3.gz)
 * [FASTA] (ftp://ftp.ensemblgenomes.org/pub/current/plants/fasta/arabidopsis_thaliana/pep/Arabidopsis_thaliana.TAIR10.pep.all.fa.gz)
 
+### Gene-SNP-Phenotype [Ensembl]
+* [BioMart] (http://plants.ensembl.org/biomart/martview?VIRTUALSCHEMANAME=plants_mart&ATTRIBUTES=athaliana_eg_snp.default.snp.refsnp_id|athaliana_eg_snp.default.snp.associated_variant_risk_allele|athaliana_eg_snp.default.snp.distance_to_transcript|athaliana_eg_snp.default.snp.chr_name|athaliana_eg_snp.default.snp.chrom_start|athaliana_eg_snp.default.snp.ensembl_gene_stable_id|athaliana_eg_snp.default.snp.consequence_type_tv|athaliana_eg_snp.default.snp.phenotype_name|athaliana_eg_snp.default.snp.phenotype_description|athaliana_eg_snp.default.snp.p_value&FILTERS=athaliana_eg_snp.default.filters.phenotype_significance."1"|athaliana_eg_snp.default.filters.distance_to_transcript."1000"&VISIBLEPANEL=resultspanel
+)
+* SNP-Phenotype significant SNPs from different GWAS studies of 97 phenotypes
+* SNP-Gene where distance to transcript <1000bp
+
 ### Gene-GO [GOA]
 * [GAF 2.0] (http://www.geneontology.org/gene-associations/gene_association.tair.gz)
 
