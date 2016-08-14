@@ -1,6 +1,7 @@
 ## Arabidopsis Knowledge Network
 
 ### Gene-Protein [Ensembl]
+In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) and 35k proteins including alternative splice variants.
 * [GFF3](ftp://ftp.ensemblgenomes.org/pub/current/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.32.gff3.gz)
 * [FASTA] (ftp://ftp.ensemblgenomes.org/pub/current/plants/fasta/arabidopsis_thaliana/pep/Arabidopsis_thaliana.TAIR10.pep.all.fa.gz)
 
@@ -11,10 +12,14 @@
 * SNP-Gene where distance to transcript <1000bp
 
 ### Gene-GO [GOA]
+* Include all evidence types
 * [GAF 2.0] (http://www.geneontology.org/gene-associations/gene_association.tair.gz)
+* Ondex GAF parser requires additional mapping file of feature type -> Ondex Concept Class
+
 
 ### Gene-Gene Interactions [BioGRID]
 * [TAB] (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.139/BIOGRID-ORGANISM-3.4.139.tab2.zip)
+* Version 3.4.139
 
 ### Gene-Phenotype [TAIR]
 * [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
@@ -38,6 +43,7 @@
 * Translation.tab
 
 ### Gene-TO [Text Mining]
+* Created 27k Gene-TO relations that have one or more evidence sentences
 
 ### Sequence alignments to other Plants
 * Protein@Arabidopsis-Protein@Plants::UniProtKB-SP [Smith-Waterman]
