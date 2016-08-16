@@ -1,6 +1,3 @@
-## Data and methods statement
-We used the <species> instance of QTLNetMiner (URL) release XX. The Arabidopsis knowledge network included
-
 ## Arabidopsis Knowledge Network
 
 ### Gene-Protein [Ensembl]
