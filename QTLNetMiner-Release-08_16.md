@@ -10,7 +10,9 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 )
 * SNP-Phenotype: significant SNPs from 107 GWAS studies of different phenotypes (122,919 relations)
 * SNP-Gene where distance to transcript <1000bp (96,047 relations)
-* #SNP=66816 #Gene=27,502 #Phenotype=108
+* #SNP=66,816 
+* #Gene=27,502 
+* #Phenotype=108
 
 ### Gene-GO [GOA]
 * Include all evidence types
