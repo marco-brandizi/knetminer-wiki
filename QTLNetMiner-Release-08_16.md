@@ -30,6 +30,7 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 ### Publications [PubMed]
 * [XML] (http://www.ncbi.nlm.nih.gov/pubmed/?term=arabidopsis+thaliana)
 * 57,600 PubMed abstracts
+* filter publications that are unconnected, i.e. not linked via citation or text-mining
 
 ### Gene-Publication [GOA, TAIR]
 * [GAF 2.0] (http://www.geneontology.org/gene-associations/gene_association.tair.gz)
