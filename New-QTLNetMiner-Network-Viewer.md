@@ -12,6 +12,8 @@ _Note: If the “New Network Viewer” button is not visible, users should **emp
 
 **2. Select genes...**
 
+![Launch KNETviewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/launch_KNETviewer_example.png)
+
 **3. View in new Network Viewer...**
 
 ![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
