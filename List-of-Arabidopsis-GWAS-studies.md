@@ -1,6 +1,6 @@
 Phenotype name	Phenotype description
-- 0W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight]
-- 0W GH FT	Flowering time was scored as the number of days for the bolt to reach 5cm [20-22C and natural light from the middle of October 2002 till March 2003]
+`0W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight]
+0W GH FT	Flowering time was scored as the number of days for the bolt to reach 5cm [20-22C and natural light from the middle of October 2002 till March 2003]
 0W GH LN	Leaf number was scored as the number of rosette leaves and the number of cauline leaves when the bolt reached 5cm [20-22C and natural light from the middle of October 2002 till March 2003]
 2W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight. Vernalized for 2 wks at 5C and 8hrs daylight]
 4W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight. Vernalized for 4 wks at 5C and 8hrs daylight]
@@ -105,4 +105,4 @@ Width 10	The diameters of 4 plants of each accession were measured and the resul
 Width 16	The diameters of 4 plants of each accession were measured and the results were expressed as an average value across all available replicates. Plants were scored 5 weeks post germination [16C and 16 hrs daylight]
 Width 22	The diameters of 4 plants of each accession were measured and the results were expressed as an average value across all available replicates. Plants were scored 5 weeks post germination [22C and 16 hrs daylight]
 YEL 	Yellowing is a precocious more diffused leaf chlorosis. Accessions were divided in three subgroups (mild-intermediate-severe) according to the severity of the yellowing. [23C and 8hrs daylight for 7 weeks]
-Zn66	Zinc concentrations in leaves grown in soil. Elemental analysis was performed with an ICP-MS (PerkinElmer). Sample normalized to calculated weights as described in Baxter et al. 2008 [20C and 16 hrs daylight]
+Zn66	Zinc concentrations in leaves grown in soil. Elemental analysis was performed with an ICP-MS (PerkinElmer). Sample normalized to calculated weights as described in Baxter et al. 2008 [20C and 16 hrs daylight]`
