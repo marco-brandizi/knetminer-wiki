@@ -1,6 +1,6 @@
 Phenotype name	Phenotype description
-0W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight]
-0W GH FT	Flowering time was scored as the number of days for the bolt to reach 5cm [20-22C and natural light from the middle of October 2002 till March 2003]
+- 0W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight]
+- 0W GH FT	Flowering time was scored as the number of days for the bolt to reach 5cm [20-22C and natural light from the middle of October 2002 till March 2003]
 0W GH LN	Leaf number was scored as the number of rosette leaves and the number of cauline leaves when the bolt reached 5cm [20-22C and natural light from the middle of October 2002 till March 2003]
 2W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight. Vernalized for 2 wks at 5C and 8hrs daylight]
 4W	Number of days required for the bolt height to reach 5cm [23C and 16hrs daylight. Vernalized for 4 wks at 5C and 8hrs daylight]
