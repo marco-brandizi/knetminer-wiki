@@ -9,7 +9,7 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 * Arabidopsis GWAS data for 107 phenotypes. Phenotypes are grouped into the four categories flowering, developmental, defense and ionomics. For more information see [Atwell et al, 2010, Nature] (http://www.nature.com/nature/journal/v465/n7298/abs/nature08800.html) and [supplementary information] (http://www.nature.com/nature/journal/v465/n7298/extref/nature08800-s1.pdf).
 * Data was downloaded from [Ensembl BioMart] (http://plants.ensembl.org/biomart/martview?VIRTUALSCHEMANAME=plants_mart&ATTRIBUTES=athaliana_eg_snp.default.snp.refsnp_id|athaliana_eg_snp.default.snp.associated_variant_risk_allele|athaliana_eg_snp.default.snp.distance_to_transcript|athaliana_eg_snp.default.snp.chr_name|athaliana_eg_snp.default.snp.chrom_start|athaliana_eg_snp.default.snp.ensembl_gene_stable_id|athaliana_eg_snp.default.snp.consequence_type_tv|athaliana_eg_snp.default.snp.phenotype_name|athaliana_eg_snp.default.snp.phenotype_description|athaliana_eg_snp.default.snp.p_value&FILTERS=athaliana_eg_snp.default.filters.phenotype_significance."1"|athaliana_eg_snp.default.filters.distance_to_transcript."1000"&VISIBLEPANEL=resultspanel
 )
-* SNP-Phenotype: significant SNPs from 107 GWAS studies of different phenotypes (122,919 relations)
+* SNP-Phenotype: significant SNPs (as defined by Ensembl) for 107 Phenotypes (122,919 relations). The dataset contains on average 1,150 SNPs per Phenotype. The significance threshold Ensembl has used seems to be very high (p-value<0.05).
 * SNP-Gene where distance to transcript <1000bp (96,047 relations)
 * #SNP=66,816 
 * #Gene=27,502 
