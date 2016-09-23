@@ -1,4 +1,5 @@
 ## Arabidopsis Knowledge Network
+Selected datasets are downloaded using a shell script [link]. The datasets are transferred into individual networks and integrated into an Arabidopsis knowledge network (AraKNET) using Ondex workflows [links]. A break down of information types in AraKNET and links to the raw data is listed below.
 
 ### Gene-Protein [Ensembl]
 In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) and 35k proteins including alternative splice variants.
