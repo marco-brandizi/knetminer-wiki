@@ -60,6 +60,6 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 *  Protein@Arabidopsis-Protein@Yeast::UniProtKB-SP [Inparanoid]
 *  Protein-GO [UniProtKB]
 *  Protein-Publication [UniProtKB]
-*  Protein-Protein [BioGRID]
+*  Protein-Protein Interaction [BioGRID]
 
 
