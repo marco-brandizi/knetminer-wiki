@@ -12,9 +12,8 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 )
 * SNP-Phenotype relations (122,919 relations) of significant SNPs (as defined by Ensembl, p-value<0.05?) linked to 107 phenotypes; on average 1,150 SNPs per phenotype.
 * SNP-Gene relations are based on genes in close proximity to SNPs <1000bp (96,047 relations)
-* #SNP=66,816 
-* #Gene=27,502 
-* #Phenotype=107
+* #SNP=66,816 | #Gene=27,502 | #Phenotype=107
+* To see it live, go to [QTLNetMiner](https://ondex.rothamsted.ac.uk/QTLNetMinerArabidopsis/) and search for dormancy, then switch to Map View.
 
 ### Gene-GO [GOA]
 * Include all evidence types
