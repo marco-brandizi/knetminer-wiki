@@ -22,11 +22,11 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 
 ### Gene-Gene Interactions [BioGRID]
-* [TAB] (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.139/BIOGRID-ORGANISM-3.4.139.tab2.zip)
+* [TAB]* (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.139/BIOGRID-ORGANISM-3.4.139.tab2.zip)
 * Version 3.4.139
 
 ### Gene-Phenotype [TAIR]
-* [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
+* [TAB]* (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
 
 ### Publications [PubMed]
 * [XML] (http://www.ncbi.nlm.nih.gov/pubmed/?term=arabidopsis+thaliana)
@@ -48,7 +48,7 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 * Translation.tab
 
 ### Gene-TO [Text Mining]
-* Created 27k Gene-TO relations that have one or more evidence sentences
+* Created 27k Gene-TO sentence based co-occurrences in PubMed abstracts
 
 ### Sequence alignments to other Plants
 * Protein@Arabidopsis-Protein@Plants::UniProtKB-SP [Smith-Waterman]
@@ -61,4 +61,6 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 *  Protein-Publication [UniProtKB]
 *  Protein-Protein Interaction [BioGRID]
 
+
+*Needs Ondex GUI to create OXL file
 
