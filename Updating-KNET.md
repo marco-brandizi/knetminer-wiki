@@ -1,6 +1,6 @@
 ## Steps to update the Arabidopsis knowledge network
 
-1. Run the data download script from [here](https://github.com/KeywanHP/QTLNetMiner/blob/master/common/util/scripts/updateInputData.sh) 
+1. Run the data download script [updateInputData.sh](https://github.com/KeywanHP/QTLNetMiner/blob/master/common/util/scripts/updateInputData.sh) 
 2. Use Ondex GUI to create OXL file for Arabidopsis BioGrid interactions
   * Copy content of biogrid_arabidopsis_console.txt and paste into Ondex Console
   * Edit the file path if needed and press enter
