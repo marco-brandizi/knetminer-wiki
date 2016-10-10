@@ -62,6 +62,8 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 *  Protein-GO [UniProtKB]
 *  Protein-Publication [UniProtKB]
 *  Protein-Protein Interaction [BioGRID]
+  * Concepts: 6247 [Protein] | 13502 [Publication]
+  * Relations: 178589 [genetic] | 94061 [genetic] | 145924 [pub_in]
 
 
 *Needs Ondex GUI to create OXL file
