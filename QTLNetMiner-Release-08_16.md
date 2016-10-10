@@ -22,8 +22,10 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 
 ### Gene-Gene Interactions [BioGRID]
-* [TAB]* (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.139/BIOGRID-ORGANISM-3.4.139.tab2.zip)
-* Version 3.4.139
+* [TAB]* (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.141/BIOGRID-ORGANISM-3.4.141.tab2.zip)
+* Version 3.4.141
+* Concepts: 9514 [Gene] | 2270 [Publication]
+* Relations: 271 [genetic] | 37600 [physical] | 19849 [pub_in]
 
 ### Gene-Phenotype [TAIR]
 * [TAB]* (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
