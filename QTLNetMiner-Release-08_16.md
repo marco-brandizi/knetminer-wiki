@@ -54,6 +54,8 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 ### Sequence alignments to other Plants
 * Protein@Arabidopsis-Protein@Plants::UniProtKB-SP [Smith-Waterman]
+  * Concepts: 21903 [Protein]
+  * Relations: 74359 [h_s_s]
 *  Protein-GO [UniProtKB]
 *  Protein-Publication [UniProtKB]
 
