@@ -19,7 +19,7 @@
   `pp = new PathParser(getActiveGraph(), new DelimitedFileReader("N:/ondex-mini/qtlnetminer/homology/Decypher/Arabidopsis_UniProtPlants_Decypher-SW.tab", "\\t+", 1));`
   * Click "Save graph as..." and enter qtlnetminer/homology/Decypher/Arabidopsis_Plants.oxl
 4. Run the script [updateNetworks.sh] (https://github.com/KeywanHP/QTLNetMiner/blob/master/common/util/scripts/updateNetworks.sh)
-  * Automatically runs several Ondex workflows
+  * Automatically runs several [Ondex workflows](https://github.com/KeywanHP/QTLNetMiner/tree/master/common/util/workflows/arabidopsis)
   * Creates a new knowledge network under `qtlnetminer/xnets/aranet/ArabidopsisKNET.oxl`
 
 
