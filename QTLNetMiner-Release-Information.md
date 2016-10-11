@@ -71,8 +71,7 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 *Needs Ondex GUI to create OXL file
 
 
-## Types of information contained in
-
+### Information types contained in Arabidopsis KNET
 
 Concept Class | Count
 --------------|------
@@ -93,4 +92,4 @@ TO | 1384
 Transport | 95
 EC | 2530
 Protcmplx | 193
-**Total Concepts** | 315073
+**Total Concepts** | **315073**
