@@ -73,23 +73,23 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 ### Information types contained in Arabidopsis KNET
 
-Concept Class | Count
+Concept Class | Concept Count
 --------------|------
 Pathway | 610
-Enzyme	| 8666
-Publication | 44829
-Reaction | 3226
-Protein	| 98824
-Compounds | 3021
-Phenotype | 6489
-MolFunc	| 9508
-Gene | 35635
-SNP | 66816
-BioProc	| 29117
-CelComp	| 4022
+Enzyme	| 8,666
+Publication | 44,829
+Reaction | 3,226
+Protein	| 98,824
+Compounds | 3,021
+Phenotype | 6,489
+MolFunc	| 9,508
+Gene | 35,635
+SNP | 66,816
+BioProc	| 29,117
+CelComp	| 4,022
 Trait (GWAS) | 108
-TO | 1384
+TO | 1,384
 Transport | 95
-EC | 2530
+EC | 2,530
 Protcmplx | 193
-**Total Concepts** | **315073**
+**Total Concepts** | **315,073**
