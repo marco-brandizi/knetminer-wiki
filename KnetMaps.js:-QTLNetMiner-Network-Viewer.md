@@ -1,4 +1,4 @@
-The new Network View for QTLNetMiner, called **KNETviewer**, uses cytoscapeJS and jQuery instead of the old Ondex Web Java applet for visualizing the network graphs. It is now up and running on all QTLNetMiner instances using the following simple steps:
+The new Network View for QTLNetMiner, called **KnetMaps**, uses cytoscapeJS and jQuery instead of the old Ondex Web Java applet for visualizing the network graphs. It is now up and running on all QTLNetMiner instances using the following simple steps:
 
 1. Search the species-specific _knowledge network_ using any query terms (Use ? for example queries)
 2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene since this opens the old network viewer)
