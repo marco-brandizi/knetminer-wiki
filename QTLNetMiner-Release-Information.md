@@ -71,6 +71,8 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 *Needs Ondex GUI to create OXL file
 
 
+## Types of information contained in
+
 
 Concept Class | Count
 --------------|------
