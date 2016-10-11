@@ -70,23 +70,25 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 *Needs Ondex GUI to create OXL file
 
-Concept Class | Number
----|---
+
+
+Concept Class | Count
+--------------|------
 Pathway | 610
 Enzyme	| 8666
-Publication	| 44829
-Reaction	| 3226
+Publication | 44829
+Reaction | 3226
 Protein	| 98824
-Compounds	| 3021
-Phenotype	0	6489
-MolFunc	0	9508
-Gene	0	35635
-SNP	0	66816
-BioProc	0	29117
-CelComp	0	4022
-Trait	0	108
-TO	0	1384
-Transport	0	95
-EC	0	2530
-Protcmplx	0	193
-Total Concepts	0	315073
+Compounds | 3021
+Phenotype | 6489
+MolFunc	| 9508
+Gene | 35635
+SNP | 66816
+BioProc	| 29117
+CelComp	| 4022
+Trait (GWAS) | 108
+TO | 1384
+Transport | 95
+EC | 2530
+Protcmplx | 193
+**Total Concepts** | 315073
