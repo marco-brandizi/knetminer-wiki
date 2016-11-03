@@ -1,4 +1,4 @@
-This document will guide you through connecting a relatively complete knowledge network to load into the server of QTLNetMiner.
+This document will guide you through connecting a relatively complete knowledge network to load into the server of KnetMiner.
 
 ## Required knowledge
 
@@ -10,14 +10,14 @@ We only need Ondex which you can download for free [here](http://www.ondex.org/v
 
 ## Data needed
 
-In this case, we'll work with _Brassica oleracea_ ([see Ensembl](http://plants.ensembl.org/Brassica_oleracea/Info/Index)) which we'll then link to the already created _Arabidopsis thaliana_ network. The taxonomy ID is 109376, you will need to enter that one into the config.xml in QTLNetMiner's server. Download the peptides and the gene gff3 from [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/fasta/brassica_oleracea/pep/) and [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/gff3/brassica_oleracea/), this will be our simplest network, the one linking genes to their respective proteins.
+In this case, we'll work with _Brassica oleracea_ ([see Ensembl](http://plants.ensembl.org/Brassica_oleracea/Info/Index)) which we'll then link to the already created _Arabidopsis thaliana_ network. The taxonomy ID is 109376, you will need to enter that one into the config.xml in KnetMiner's server. Download the peptides and the gene gff3 from [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/fasta/brassica_oleracea/pep/) and [here](ftp://ftp.ensemblgenomes.org/pub/plants/release-26/gff3/brassica_oleracea/), this will be our simplest network, the one linking genes to their respective proteins.
 
 ## Folder structure
 
 Since we will create a few smaller "sub"-networks it is useful to create folders for each subnetwork. "Officially" each organism's project is structured like this (you can see it "in action" [here](https://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/))
 
 ```
-qtlnetminer
+knetminer
 |
 |-- homology (parental folder for all homology related information)
 |   |
@@ -414,4 +414,4 @@ It would not be wise to run this XML file on a laptop, it's best to use ondex-mi
 </Ondex>
 ```
 
-The final OXL (in this case named `qtlnetminer/xnets/brassnet/BrassOleNet_2015.oxl`) will be used in the QTLNetMiner server.
+The final OXL (in this case named `qtlnetminer/xnets/brassnet/BrassOleNet_2015.oxl`) will be used in the KnetMiner server.
