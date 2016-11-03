@@ -1,10 +1,10 @@
-The new Network View for QTLNetMiner, called **KnetMaps**, uses cytoscapeJS and jQuery instead of the old Ondex Web Java applet for visualizing the network graphs. It is now up and running on all QTLNetMiner instances using the following simple steps:
+The new Network View for KnetMiner, called **KnetMaps**, uses cytoscapeJS and jQuery instead of the old Ondex Web Java applet for visualizing the network graphs. It is now up and running on all KnetMiner instances using the following simple steps:
 
 1. Search the species-specific _knowledge network_ using any query terms (Use ? for example queries)
 2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene since this opens the old network viewer)
 3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (Note: _allow pop-ups in your browser_).
 
-_Note: If the “New Network Viewer” button is not visible, users should **empty the cache** in their web browser and reload (F5) the QTLNetMiner webpage._
+_Note: If the “New Network Viewer” button is not visible, users should **empty the cache** in their web browser and reload (F5) the KnetMiner webpage._
 
 **1. Search...**
 
@@ -51,4 +51,4 @@ KNETviewer improves on the performance and rendering capabilities of the old Jav
 
 * **Show Links**: Some concepts have a blur effect which denotes that they have hidden concepts connected to them. These can be displayed by right-clicking on a blurred concept and selecting “Show Links”. This displays the hidden neighbourhood for the selected concept.
 
-**_Note:_** While this new Network Viewer is stable, it is still under development and more features will be added to it in the near future and it will soon be _live_ on all the various QTLNetMiner instances.
+**_Note:_** While this new Network Viewer is stable, it is still under development and more features will be added to it in the near future and it will soon be _live_ on all the various KnetMiner instances.
