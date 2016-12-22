@@ -221,7 +221,11 @@ Bo7g104470.1	AT4G16490.1	ortholog_one2many	87	84	1
 (etc.)
 ```
 
-Now there are a few lines where the _B. oleracea_ proteins did not show a homology to _A. thaliana_ like 'Bo7g104270.1' here, delete these using any tool or programming language you like. Save that table under `homology/BioMart/Boleracea_Arabidopsis.txt`. At this point, it may be advisable to save the URL of the table you generated - on the BioMart page, click "URL" in the top right corner, and you'll get something like: 
+Now there are a few lines where the _B. oleracea_ proteins did not show a homology to _A. thaliana_ like 'Bo7g104270.1' here, delete these using any tool or programming language you like, here in AWK:
+
+    awk '{if ( $2 != "") print}' your_file > your_cleaned_file.txt
+
+Save that table under `homology/BioMart/Boleracea_Arabidopsis.txt`. At this point, it may be advisable to save the URL of the table you generated - on the BioMart page, click "URL" in the top right corner, and you'll get something like: 
 
 ```
 http://plants.ensembl.org/biomart/martview?VIRTUALSCHEMANAME=plants_mart_26&ATTRIBUTES=boleracea_eg_gene.default.homologs.ensembl_peptide_id|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_ensembl_peptide|boleracea_eg_gene.default.homologs.athaliana_eg_orthology_type|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_perc_id|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_perc_id_r1|boleracea_eg_gene.default.homologs.athaliana_eg_homolog_is_tree_compliant&FILTERS=&VISIBLEPANEL=resultspanel
