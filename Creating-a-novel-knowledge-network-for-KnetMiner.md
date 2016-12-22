@@ -199,6 +199,12 @@ At this stage, we have at least three networks - one linking genes to proteins, 
 ```
 This will compare the names of all concepts/nodes in the network and merge them if they are identical. After running this XML either using Ondex-mini or Ondex, you have one network showing the PFam and InterPro domains for all proteins encoded by their respective genes.
 
+The Brassicaoleracea_Report.xml is XML without any linebreaks, here's a piece of Python to pretty-print the XML:
+
+    python -c 'import lxml.etree as etree; x = etree.parse("Boleracea_report.xml"); print etree.tostring(x, pretty_print = True)'
+
+(depends on lxml)
+
 ## Homology
 
 Next, we'll see whether we can connect some homologous proteins to our _B. oleracea_ proteins.
