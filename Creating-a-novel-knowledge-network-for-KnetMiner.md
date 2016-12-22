@@ -112,6 +112,11 @@ This will give you the same results. Once you have finished loading the gff3 fil
 
 Now let's add some protein domains. You can get domains from [BioMart](http://plants.ensembl.org/biomart/martview/b0290503aa21e7aa6465382793942ba3),  choose "Brassica oleracea". Click on "Features", de-select everything under "Gene Attributes" and select only "Protein stable ID". Open "Protein Domains" and select "InterPro ID", "InterPro short description" and "InterPro description". You'll see a few example rows. Click on "Results" in the top left corner and you'll see the beginning of the table, download the whole table using the "Go" button into `organisms/Brassicaoleracea/Protein_Domain/Protein_InterPro/Protein_InterPro.txt`.
 
+You can (optionally) remove lines without InterPro domains using 
+
+    awk '{if ($2 != "")  print}' Protein_Interpro.txt > Fixed_Protein_Interpro.txt
+    mv Fixed_Protein_Interpro.txt Protein_Interpro.txt
+
 We'll use the Ondex Console to load this data. Open Ondex using `bash ondex/runme.sh`, click on "Start a new graph", and open the console using "Tools -> Console". The language used in the console is similar to Javascript, here is the code to create a graph out of the InterPro data:
 
 ```Javascript
