@@ -4,8 +4,6 @@ The new Network View for KnetMiner, called **KnetMaps**, uses cytoscapeJS and jQ
 2. Scroll down to the results (in the _Gene View_ tab) and select one or more genes or click a gene.
 3. Click on the “_View Network_” button underneath of the table which will open **KnetMaps** in the Network View tab. KnetMaps can then be maximized to full screen.
 
-_Note: If the “New Network Viewer” button is not visible, users should **empty the cache** in their web browser and reload (F5) the KnetMiner webpage._
-
 **1. Search...**
 
 ![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_1.png)
