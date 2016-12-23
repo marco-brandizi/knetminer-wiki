@@ -106,7 +106,36 @@ As you can see, the steps and plugins are the same. You can either run these ste
 
     bash ondex-mini/runme.sh tlnetminer/organisms/BrassicaOleracea/Gene_Protein/Gene_Protein.xml
 
-This will give you the same results. Once you have finished loading the gff3 file, test the resulting graph in Ondex whether everything was loaded correctly - are the genes and proteins connected via a relation? Are the names and labels correct? If everything looks OK, congratulations, you have your beginner's network of genes connected to the proteins they encode.
+This will give you the same results. Once you have finished loading the gff3 file, test the resulting graph in Ondex whether everything was loaded correctly - are the genes and proteins connected via a relation? Are the names and labels correct?
+
+It should look like this:
+
+![Working Ondex connection](http://i.imgur.com/5Mcs3U3.png)
+
+And the XML report should have something like:
+
+```
+      <conceptClasses>
+        <conceptClass>
+          <id>Gene</id>
+          <count>101040</count>
+        </conceptClass>
+        <conceptClass>
+          <id>Protein</id>
+          <count>101040</count>
+        </conceptClass>
+      </conceptClasses>
+      <relationTypes>
+        <relationType>
+          <id>enc</id>
+          <count>101040</count>
+        </relationType>
+      </relationTypes>
+```
+
+With malformed gff3 files you may have 0 enc(odes) relations. I've had that happen with a gff3 file where the 'Alias' field had the same name as the peptides in the proteins fasta, not the first ID field.
+
+If everything looks OK, congratulations, you have your beginner's network of genes connected to the proteins they encode.
 
 ## Adding protein domains
 
