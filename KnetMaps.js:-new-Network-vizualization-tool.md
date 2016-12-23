@@ -35,15 +35,15 @@ KnetMaps improves on the performance and rendering capabilities of the old Java 
 
 * **Update concept name**: There are also <b><i>eye</i></b> icons next to concept <i>synonyms</i> and <i>accessions</i> in the Item Info. table. Clicking on such an icon updates the concept label in the network graph with this new value. This is useful in case users want to use their preferred names (from the synonyms or accessions) for concepts.
 
-* There are **Sliding panels** on the top, right and bottom of the Network Viewer pop-up window which you can click to open or close and drag/ slide to re-size. The top panel allows users to: 
-    1. Change the graph’s **Layout** using force-directed layout algorithms. Some of the useful layout options are the default (WebCola), CoSE, circular, Cose-Bilkent, Arbor, Grid and Concentric.
+* KnetMaps menubar: This allows users to: 
+    1. Change the graph’s **Layout** using force-directed layout algorithms. Some of the useful layout options are the default (CoSE), Force, Circular, Cose-Bilkent and Concentric.
     1. **Re-layout** the entire graph.
-    1. Enable/ disable layout animation (useful for very large graphs to improve performance).
-    1. **Search** by concept name (or part of concept name).
+    1. Open the sliding **Info box**.
     1. Export graph data (and visual attributes) as **JSON**.
     1. Export graph as a .png **Image**.
     1. Reset the graph viewport.
-    1. Make **labels** visible on concepts and relations, via checkboxes.
+    1. Make **labels** visible on concepts, relations or both
+    1. Toggle label font size.
 
 * **Info box**: The information panel on the right is to display relevant information related to the selected concept or relation. It automatically slides open if users right-click a concept or relation and select “Show Info” option. The Info box is similar to the Item Info window in the old version and displays information such as concept/ relation Type, value, PID, relation label, relation source (from), relation target (to), _Annotations, Attributes_ (such as publication abstracts, title, authors, amino-acid sequence, TAX ID, etc.) and _Accessions_ (with links to TAIR, Ensembl, UniProtKB, PubMed, KEGG, IPRO, PFAM, etc., where relevant). User’s search query terms, where found, are _highlighted_ in this Item Info. panel.
 
