@@ -6,11 +6,11 @@ The new Network View for KnetMiner, called **KnetMaps**, uses cytoscapeJS and jQ
 
 **1. Search...**
 
-![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/New_Network_1.png)
+![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/knetminer1.png)
 
 **2. Select genes...**
 
-![Launch KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner/launch_KNETviewer_example.png)
+![Launch KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner/knetminer2.png)
 
 **3. View in KnetMaps...**
 
