@@ -1,8 +1,8 @@
-The new Network View for KnetMiner, called **KnetMaps**, uses cytoscapeJS and jQuery instead of the old Ondex Web Java applet for visualizing the network graphs. It is now up and running on all KnetMiner instances using the following simple steps:
+The new Network View for KnetMiner, called **KnetMaps**, uses cytoscapeJS and jQuery for visualizing the network graphs. It is now up and running on all KnetMiner instances using the following simple steps:
 
-1. Search the species-specific _knowledge network_ using any query terms (Use ? for example queries)
-2. Scroll down to the results (Gene View) and use check boxes to select one or more genes (do not click on a gene since this opens the old network viewer)
-3. Click on the “_New Network Viewer_” button underneath of the table which will open the new Network Viewer in a new _pop-up_ window (Note: _allow pop-ups in your browser_).
+1. Search the species-specific instance/ _knowledge network_ using any query terms (e.g, using any of the example queries provided)
+2. Scroll down to the results (in the _Gene View_ tab) and select one or more genes or click a gene.
+3. Click on the “_View Network_” button underneath of the table which will open **KnetMaps** in the Network View tab. KnetMaps can then be maximized to full screen.
 
 _Note: If the “New Network Viewer” button is not visible, users should **empty the cache** in their web browser and reload (F5) the KnetMiner webpage._
 
@@ -12,18 +12,18 @@ _Note: If the “New Network Viewer” button is not visible, users should **emp
 
 **2. Select genes...**
 
-![Launch KNETviewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/launch_KNETviewer_example.png)
+![Launch KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner/launch_KNETviewer_example.png)
 
-**3. View in new Network Viewer...**
+**3. View in KnetMaps...**
 
-![New Network Viewer](https://ondex.rothamsted.ac.uk/QTLNetMiner/NewNetworkViewer.png)
+![KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner/KnetMaps_demo.png)
 
 ### Features
-KNETviewer improves on the performance and rendering capabilities of the old Java-based Network View. Some of its features are detailed below to help new users get familiarised with it:
+KnetMaps improves on the performance and rendering capabilities of the old Java applet-based Ondex Web Network View. Some of its features are detailed below to help new users get familiarised with it:
 
 * **Concepts** (nodes) are displayed using different symbols and colours like in the old Java version (detailed in the Legend below the graph). **Relations** (edges) too use various colours depending on the type of concept, as in the old Java version.
 
-* **Touch gestures**: KNETviewer can also be used with tough devices. Touch gestures such as tap (click), hold, drag, etc. have been incorporated within KNETviewer to enable interactive exploration of network graphs.
+* **Touch gestures**: KnetMaps can also be used with tough devices. Touch gestures such as tap (click), hold, drag, etc. have been incorporated within KnetMaps to enable interactive exploration of network graphs.
 
 * **Flagged genes**: All the genes are displayed as blue triangles but the gene(s) originally selected for viewing in the network window have a double border to visually distinguish them from other genes. These were shown in the old version with a blue flag next to them. 
 
@@ -47,8 +47,6 @@ KNETviewer improves on the performance and rendering capabilities of the old Jav
     1. Reset the graph viewport.
     1. Make **labels** visible on concepts and relations, via checkboxes.
 
-* **Item Info.** panel: The panel on the right is to display relevant information related to the selected concept or relation. It automatically slides open if users right-click a concept or relation and select “Item Info” option. The panel is similar to the Item Info window in the old version and displays information such as concept/ relation Type, value, PID, relation label, relation source (from), relation target (to), _Annotations, Attributes_ (such as publication abstracts, title, authors, amino-acid sequence, TAX ID, etc.) and _Accessions_ (with links to TAIR, Ensembl, UniProtKB, PubMed, KEGG, IPRO, PFAM, etc., where relevant). User’s search query terms, where found, are _highlighted_ in this Item Info. panel.
+* **Info box** panel: The information panel on the right is to display relevant information related to the selected concept or relation. It automatically slides open if users right-click a concept or relation and select “Show Info” option. The Info box is similar to the Item Info window in the old version and displays information such as concept/ relation Type, value, PID, relation label, relation source (from), relation target (to), _Annotations, Attributes_ (such as publication abstracts, title, authors, amino-acid sequence, TAX ID, etc.) and _Accessions_ (with links to TAIR, Ensembl, UniProtKB, PubMed, KEGG, IPRO, PFAM, etc., where relevant). User’s search query terms, where found, are _highlighted_ in this Item Info. panel.
 
 * **Show Links**: Some concepts have a blur effect which denotes that they have hidden concepts connected to them. These can be displayed by right-clicking on a blurred concept and selecting “Show Links”. This displays the hidden neighbourhood for the selected concept.
-
-**_Note:_** While this new Network Viewer is stable, it is still under development and more features will be added to it in the near future and it will soon be _live_ on all the various KnetMiner instances.
