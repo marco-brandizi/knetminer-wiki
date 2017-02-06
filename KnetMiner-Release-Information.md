@@ -3,7 +3,7 @@ Selected datasets are downloaded using a shell script [link]. The datasets are t
 
 ### Gene-Protein [Ensembl]
 In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) and 35k proteins including alternative splice variants.
-* [GFF3](ftp://ftp.ensemblgenomes.org/pub/current/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.32.gff3.gz)
+* [GFF3](ftp://ftp.ensemblgenomes.org/pub/current/plants/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.34.gff3.gz)
 * [FASTA] (ftp://ftp.ensemblgenomes.org/pub/current/plants/fasta/arabidopsis_thaliana/pep/Arabidopsis_thaliana.TAIR10.pep.all.fa.gz)
 
 ### Gene-SNP-Phenotype [Ensembl]
@@ -13,7 +13,7 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 * SNP-Phenotype relations (122,919 relations) of significant SNPs (as defined by Ensembl, p-value<0.05?) linked to 107 phenotypes; on average 1,150 SNPs per phenotype.
 * SNP-Gene relations are based on genes in close proximity to SNPs <1000bp (96,047 relations)
 * #SNP=66,816 | #Gene=27,502 | #Phenotype=107
-* To see it live, go to [QTLNetMiner](https://ondex.rothamsted.ac.uk/QTLNetMinerArabidopsis/) and search for dormancy, then switch to Map View.
+* To see it live, go to [KnetMiner](http://knetminer.rothamsted.ac.uk/Arabidopsis_thaliana/) and search for dormancy, then switch to Map View.
 
 ### Gene-GO [GOA]
 * Include all evidence types
@@ -22,8 +22,8 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 
 ### Gene-Gene Interactions [BioGRID]
-* [TAB]* (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.141/BIOGRID-ORGANISM-3.4.141.tab2.zip)
-* Version 3.4.141
+* [TAB]* (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.144/BIOGRID-ORGANISM-3.4.144.tab2.zip)
+* Version 3.4.144
 * Concepts: 9514 [Gene] | 2270 [Publication]
 * Relations: 271 [genetic] | 37600 [physical] | 19849 [pub_in]
 
