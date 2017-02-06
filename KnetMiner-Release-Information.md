@@ -22,13 +22,13 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 
 ### Gene-Gene Interactions [BioGRID]
-* [TAB]* (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.144/BIOGRID-ORGANISM-3.4.144.tab2.zip)
+* [TAB] (http://thebiogrid.org/downloads/archives/Release%20Archive/BIOGRID-3.4.144/BIOGRID-ORGANISM-3.4.144.tab2.zip)
 * Version 3.4.144
-* Concepts: 9514 [Gene] | 2270 [Publication]
-* Relations: 271 [genetic] | 37600 [physical] | 19849 [pub_in]
+* Concepts: 9538 [Gene] | 2326 [Publication]
+* Relations: 299 [genetic] | 37756 [physical] | 20044 [pub_in]
 
 ### Gene-Phenotype [TAIR]
-* [TAB]* (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
+* [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
 
 ### Publications [PubMed]
 * [XML] (http://www.ncbi.nlm.nih.gov/pubmed/?term=arabidopsis+thaliana)
@@ -37,12 +37,13 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 ### Gene-Publication [GOA, TAIR]
 * [GAF 2.0] (http://www.geneontology.org/gene-associations/gene_association.tair.gz)
-* [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20130305.txt)
+* [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20140331.txt.gz)
 
-### Protein-Publication [UniProtKB]
+### Protein-Publication [UniProtKB, TAIR]
 * [At proteome XML] (http://www.uniprot.org/uniprot/?query=proteome:UP000006548&compress=yes&format=xml)
-* relations (pub_in): 34,884
-* concepts (Publication): 11,550
+* [TAB] (ftp://ftp.arabidopsis.org/home/tair/User_Requests/Locus_Published_20140331.txt.gz)
+* relations (pub_in): 65,780
+* concepts (Publication): 15,892
 
 ### Protein-Pathway [AraCyc]
 * AraCyc Release 14
@@ -54,8 +55,8 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 
 ### Sequence alignments to other Plants
 * Protein@Arabidopsis-Protein@Plants::UniProtKB-SP [Smith-Waterman]
-  * Concepts: 21903 [Protein]
-  * Relations: 74359 [h_s_s]
+  * Concepts: 26663 [Protein]
+  * Relations: 100947 [h_s_s]
 *  Protein-GO [UniProtKB]
 *  Protein-Publication [UniProtKB]
 
@@ -64,11 +65,9 @@ In total 32k Arabidopsis genes (including protein-coding and non-coding RNAs) an
 *  Protein-GO [UniProtKB]
 *  Protein-Publication [UniProtKB]
 *  Protein-Protein Interaction [BioGRID]
-  * Concepts: 6247 [Protein] | 13502 [Publication]
-  * Relations: 178589 [genetic] | 94061 [genetic] | 145924 [pub_in]
+  * Concepts: 6366 [Protein] | 13725 [Publication]
+  * Relations: 462411 [genetic] | 97205 [physical] | 155615 [pub_in]
 
-
-*Needs Ondex GUI to create OXL file
 
 
 ### Information types contained in Arabidopsis KNET
@@ -77,19 +76,19 @@ Concept Class | Concept Count
 --------------|------
 Pathway | 610
 Enzyme	| 8,666
-Publication | 44,829
-Reaction | 3,226
-Protein	| 98,824
-Compounds | 3,021
+Publication | 70,720
+Reaction | 3,193
+Protein	| 118,803
+Compounds | 3,000
 Phenotype | 6,489
-MolFunc	| 9,508
-Gene | 35,635
+MolFunc	| 10,542
+Gene | 31,484
 SNP | 66,816
-BioProc	| 29,117
-CelComp	| 4,022
+BioProc	| 29,400
+CelComp	| 4,048
 Trait (GWAS) | 108
 TO | 1,384
 Transport | 95
-EC | 2,530
+EC | 2,254
 Protcmplx | 193
-**Total Concepts** | **315,073**
+**Total Concepts** | **368,434**
