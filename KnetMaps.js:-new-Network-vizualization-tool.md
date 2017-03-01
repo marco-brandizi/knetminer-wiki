@@ -6,15 +6,15 @@ The new Network View for KnetMiner, called **KnetMaps**, uses cytoscapeJS and jQ
 
 **1. Search...**
 
-![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner/knetminer1.png)
+![Using Sample Queries](https://ondex.rothamsted.ac.uk/QTLNetMiner-hidden/knetminer1.png)
 
 **2. Select genes...**
 
-![Launch KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner/knetminer2.png)
+![Launch KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner-hidden/knetminer2.png)
 
 **3. View in KnetMaps...**
 
-![KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner/KnetMaps_demo.png)
+![KnetMaps](https://ondex.rothamsted.ac.uk/QTLNetMiner-hidden/KnetMaps_demo.png)
 
 ### Features
 KnetMaps improves on the performance and rendering capabilities of the old Java applet-based Ondex Web Network View. Some of its features are detailed below to help new users get familiarised with it:
