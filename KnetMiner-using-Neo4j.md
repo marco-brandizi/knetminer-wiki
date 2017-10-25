@@ -63,3 +63,5 @@ MATCH p = (g:Gene)-->()-[:ortho]->()-[:xref]-()-[:is_a]-()-[:ca_by]-()-[:part_of
 WHERE g.name='RIN4'
 RETURN p
 ```
+
+`Cypher version: CYPHER 3.2, planner: COST, runtime: INTERPRETED. 5168 total db hits in 78 ms`
