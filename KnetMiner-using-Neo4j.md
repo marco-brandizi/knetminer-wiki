@@ -1,7 +1,6 @@
 Everything related to the evaluation of using Neo4j as the graph database of KnetMiner...
 
-
-## Cypher queries representing the semantic motifs used in KnetMiner
+## Cypher queries representing the semantic motifs used in KnetMiner
 
 ```sql
 //Q1: Path length = 1; All direct neighbours of target gene (ignore direction)
@@ -67,7 +66,7 @@ RETURN p
 
 `Cypher version: CYPHER 3.2, planner: COST, runtime: INTERPRETED. 5168 total db hits in 78 ms`
 
-## Same queries in SPARQL
+## Same queries in SPARQL
 
 ```sql
 PREFIX  odx:  <http://ondex.sourceforge.net/ondex-core#>
