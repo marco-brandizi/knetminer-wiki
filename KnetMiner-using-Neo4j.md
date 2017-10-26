@@ -143,7 +143,7 @@ LIMIT 1000
 Required time is 192ms against the wheat network, with a similar hardware. 
 
 Notes about SPARQL:
-  * The compactness/readability could be improved by defining a better RDF schema. Eg, `?a odx:conceptName ?aname` is weird, at the moment it's the only way to restrict ?a to concepts, since they're not made instances of a 'Concept' (they're instances of some concept class, but it's hard to match this other condition). In a better schema, it would be: `?a a odx:Concept`
+  * The compactness/readability could be improved by defining a better RDF schema. Eg, `?a odx:conceptName ?aname` is weird, at the moment it's the only way to restrict ?a to concepts, since they're not made instances of a 'Concept' (they're instances of some concept class, but it's hard to match this other condition). In a better schema, it would be: `?a a odx:Concept`. Same goes for the namespaces: instead of `odx:`, `odxcc:`, `odxrt:` we might have only one, use a single or double-letter prefix (`ox:Gene and ox:is_a`, or even `ox:Gene and ox:is_a`) and simplify it all. Or even have a default namespace and use a syntax for identifiers similar to Cypher (`:Gene`, `:is_a`).
   * Although Cypher forces to linear paths and redundancy (see next point), it appears to have a slightly more compact syntax, e.g.: 
     * there is no SPARQL equivalent for unbounded direction edges like `()-[:physical]-()`. This has to be specified via `?x odxrt:physical|^odxrt:physical ?y`, where `?x ^p ?y` means: `?y p ?x`.
     * there is no equivalent for in-line type specification, e.g., `(g:Gene{name:'RIN4'})` has to be written with two patterns: `?g a odxcc:Gene; odx:conceptName 'RIN4'.` (the ';' separator tells that the subject of the second triple is still ?g).
